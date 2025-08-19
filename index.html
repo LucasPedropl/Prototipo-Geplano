@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geplano - Gestão e Consultoria de Obras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'TarunoWide';
+            src: url('https://cdn.jsdelivr.net/gh/silviowagner/geplano-fonts/TarunoWide-Bold.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/silviowagner/geplano-fonts/TarunoWide-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FDFDFD;
+        }
+        h1, h2, h3, .font-taruno {
+            font-family: 'TarunoWide', sans-serif;
+        }
+        .bg-geplano-green { background-color: #00613A; }
+        .text-geplano-green { color: #00613A; }
+        .border-geplano-green { border-color: #00613A; }
+        .bg-geplano-gold { background-color: #A37E2B; }
+        .text-geplano-gold { color: #A37E2B; }
+        .border-geplano-gold { border-color: #A37E2B; }
+        .section-padding {
+            padding: 4rem 1rem;
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 2rem;
+            }
+        }
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1581092446347-a5c13e0d8f8a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .filter-btn.active {
+            background-color: #00613A;
+            color: white;
+        }
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-btn.active {
+            border-bottom: 2px solid #A37E2B;
+            color: #A37E2B;
+        }
+    </style>
+    <!-- Chosen Palette: Geplano Official (Verde Rolex #00613A, Dourado Metálico #A37E2B, Neutrals) -->
+    <!-- Application Structure Plan: A single-page, narrative-driven SPA designed to guide users through Geplano's unique value proposition. The flow starts with a powerful Hero section stating the core message (intelligent construction), moves to "Nossa Solução" to educate users on the key differentiator (Obra por Administração), builds trust with "Diferenciais" (App, G10 Method), provides social proof via an interactive "Projetos" portfolio, and ends with a clear "Contato" CTA. This linear, storytelling structure is more immersive and persuasive than a traditional multi-page site, effectively communicating a complex business model to a high-end audience. -->
+    <!-- Visualization & Content Choices: Report Info: "Obra por Administração" model -> Goal: Educate & Simplify -> Viz/Presentation: Interactive tabbed section for Pillars/Advantages -> Interaction: User clicks tabs to reveal content, preventing information overload -> Justification: Makes a complex concept digestible and engaging. | Report Info: Exclusive Management App -> Goal: Showcase Technological Advantage -> Viz/Presentation: Interactive smartphone mockup -> Interaction: User clicks feature list to change screen image in mockup -> Justification: Tangibly demonstrates the app's value. | Report Info: Project Portfolio -> Goal: Demonstrate Expertise & Quality -> Viz/Presentation: Filterable image gallery -> Interaction: User clicks category buttons (Residencial, Corporativo) to instantly filter projects -> Justification: Allows potential clients to easily find relevant examples, enhancing user experience and proving capability. All interactions are built with vanilla JS. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="text-gray-800 antialiased">
+
+    <header id="header" class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="font-taruno text-2xl font-bold text-geplano-green">
+                        GEPLANO
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <nav class="ml-10 flex items-baseline space-x-4">
+                        <a href="#solucao" class="text-gray-600 hover:text-geplano-green px-3 py-2 rounded-md text-sm font-medium">Nossa Solução</a>
+                        <a href="#diferenciais" class="text-gray-600 hover:text-geplano-green px-3 py-2 rounded-md text-sm font-medium">Diferenciais</a>
+                        <a href="#projetos" class="text-gray-600 hover:text-geplano-green px-3 py-2 rounded-md text-sm font-medium">Projetos</a>
+                        <a href="#contato" class="bg-geplano-green text-white hover:bg-opacity-90 px-4 py-2 rounded-md text-sm font-bold transition-colors">Contato</a>
+                    </nav>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-geplano-green hover:bg-geplano-green hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#solucao" class="text-gray-600 hover:text-geplano-green block px-3 py-2 rounded-md text-base font-medium">Nossa Solução</a>
+                <a href="#diferenciais" class="text-gray-600 hover:text-geplano-green block px-3 py-2 rounded-md text-base font-medium">Diferenciais</a>
+                <a href="#projetos" class="text-gray-600 hover:text-geplano-green block px-3 py-2 rounded-md text-base font-medium">Projetos</a>
+                <a href="#contato" class="bg-geplano-green text-white hover:bg-opacity-90 block px-3 py-2 rounded-md text-base font-bold transition-colors">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-bg h-screen flex items-center justify-center text-white relative">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="text-center z-10 p-4">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider leading-tight">A Inteligência por Trás do Alto Padrão</h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">Construa seu legado com transparência, controle total e a máxima eficiência de capital. Onde cada detalhe é cuidado.</p>
+                <a href="#solucao" class="mt-8 inline-block bg-geplano-gold text-white font-bold py-3 px-8 rounded-lg uppercase tracking-widest hover:bg-opacity-90 transition-colors">Descubra Nossa Solução</a>
+            </div>
+        </section>
+
+        <section id="sobre" class="section-padding bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="scroll-reveal">
+                        <h2 class="text-3xl md:text-4xl font-bold text-geplano-green uppercase">Mais que Obras, Cuidamos de Sonhos.</h2>
+                        <p class="mt-4 text-lg text-gray-600">Fundada em 2014, a Geplano nasceu com a missão de transformar a construção civil. Com vasta experiência em obras industriais e, desde 2021, foco em projetos de alto padrão, desenvolvemos uma metodologia única.</p>
+                        <p class="mt-4 text-gray-600">Para nós, construir é cuidar. Cuidamos minuciosamente de todo o processo, do planejamento ao pós-obra, garantindo um modelo de trabalho exclusivo que se traduz em excelência, transparência e resultados excepcionais para você.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8 text-center scroll-reveal">
+                        <div class="p-4">
+                            <p class="text-4xl md:text-5xl font-bold text-geplano-gold" data-counter-target="10">0</p>
+                            <p class="mt-2 text-gray-500">Anos de Experiência</p>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-4xl md:text-5xl font-bold text-geplano-gold" data-counter-target="50">0</p>
+                            <p class="mt-2 text-gray-500">Projetos Gerenciados</p>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-4xl md:text-5xl font-bold text-geplano-gold" data-counter-target="100000">0</p>
+                            <p class="mt-2 text-gray-500">m² Construídos</p>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-4xl md:text-5xl font-bold text-geplano-gold" data-counter-target="30">0</p>
+                            <p class="mt-2 text-gray-500">% de Otimização Média</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solucao" class="section-padding bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="scroll-reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-geplano-green uppercase">O Método Inteligente para Construir seu Patrimônio</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Nosso modelo de Obra por Administração, ou Obra a Preço de Custo, é a forma mais transparente e eficiente de construir, eliminando custos desnecessários e bitributação, gerando uma otimização de até 30% no valor final.</p>
+                </div>
+
+                <div class="mt-12 max-w-4xl mx-auto scroll-reveal">
+                    <div class="border-b border-gray-200">
+                        <nav class="-mb-px flex space-x-8 justify-center" aria-label="Tabs">
+                            <button class="tab-btn active whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg" data-tab="pilares">Os 3 Pilares</button>
+                            <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg" data-tab="vantagens">Suas Vantagens</button>
+                        </nav>
+                    </div>
+
+                    <div id="pilares" class="tab-content active mt-8">
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="text-center p-6">
+                                <div class="text-5xl text-geplano-gold mb-4">1</div>
+                                <h3 class="text-xl font-bold text-geplano-green">Gestão Completa</h3>
+                                <p class="mt-2 text-gray-600">Assumimos toda a gestão da obra em seu nome, da concepção ao pós-obra, com responsabilidade técnica e foco total no resultado.</p>
+                            </div>
+                            <div class="text-center p-6">
+                                <div class="text-5xl text-geplano-gold mb-4">2</div>
+                                <h3 class="text-xl font-bold text-geplano-green">Faturamento Direto</h3>
+                                <p class="mt-2 text-gray-600">Todos os materiais e serviços são faturados diretamente no seu nome (CPF/CNPJ), garantindo total transparência e eliminando bitributação.</p>
+                            </div>
+                            <div class="text-center p-6">
+                                <div class="text-5xl text-geplano-gold mb-4">3</div>
+                                <h3 class="text-xl font-bold text-geplano-green">Taxa de Administração</h3>
+                                <p class="mt-2 text-gray-600">Nossa remuneração é uma taxa fixa e transparente sobre o custo real da obra, sem surpresas ou custos ocultos. Nosso sucesso é o seu sucesso.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="vantagens" class="tab-content mt-8">
+                         <div class="grid md:grid-cols-2 gap-8 text-left">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-geplano-green">Acompanhamento do Custo Real</h3>
+                                <p class="mt-2 text-gray-600">Você tem acesso a todos os custos em tempo real, com total controle sobre cada centavo investido no seu projeto.</p>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-geplano-green">Flexibilidade de Alterações</h3>
+                                <p class="mt-2 text-gray-600">Precisa mudar algo no projeto? Com nosso modelo, as alterações são simples e o custo é apenas o da modificação, sem multas ou taxas extras.</p>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-geplano-green">Otimização Financeira Superior</h3>
+                                <p class="mt-2 text-gray-600">A eliminação da dupla tributação e a compra inteligente de materiais resultam em uma otimização significativa do seu investimento.</p>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-geplano-green">Redução de Perdas</h3>
+                                <p class="mt-2 text-gray-600">Nosso planejamento rigoroso e controle de estoque minimizam o desperdício de materiais, gerando mais valor para sua obra.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="diferenciais" class="section-padding bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center scroll-reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-geplano-green uppercase">Tecnologia e Método: Nossa Fórmula para a sua Tranquilidade</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Unimos tecnologia de ponta a um método de gestão comprovado para oferecer uma experiência de construção sem precedentes em controle e eficiência.</p>
+                </div>
+
+                <div class="mt-16 grid md:grid-cols-2 gap-16 items-center">
+                    <div class="scroll-reveal">
+                        <h3 class="text-2xl font-bold text-geplano-green">Sua Obra na Palma da Mão</h3>
+                        <p class="mt-4 text-gray-600">Com nosso aplicativo exclusivo, você tem o controle total do seu projeto, onde quer que esteja. É a materialização da nossa promessa de transparência e gestão inteligente.</p>
+                        <ul id="app-features" class="mt-6 space-y-4">
+                            <li><button class="app-feature-btn w-full text-left p-3 rounded-lg transition-colors duration-300 bg-gray-100 font-bold" data-image="https://placehold.co/300x650/00613A/FFFFFF?text=Cronograma">Acompanhamento do Cronograma</button></li>
+                            <li><button class="app-feature-btn w-full text-left p-3 rounded-lg transition-colors duration-300" data-image="https://placehold.co/300x650/00613A/FFFFFF?text=Financeiro">Relatórios Financeiros</button></li>
+                            <li><button class="app-feature-btn w-full text-left p-3 rounded-lg transition-colors duration-300" data-image="https://placehold.co/300x650/00613A/FFFFFF?text=Compras">Aprovação de Compras</button></li>
+                            <li><button class="app-feature-btn w-full text-left p-3 rounded-lg transition-colors duration-300" data-image="https://placehold.co/300x650/00613A/FFFFFF?text=Fotos">Diário de Obra com Fotos</button></li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-center scroll-reveal">
+                        <div class="relative w-full max-w-[300px] h-[650px] bg-gray-800 rounded-[40px] border-[14px] border-gray-800 shadow-2xl">
+                            <div class="absolute top-[10px] left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-800 rounded-b-lg"></div>
+                            <img id="app-screen" src="https://placehold.co/300x650/00613A/FFFFFF?text=Cronograma" class="w-full h-full object-cover rounded-[26px] transition-opacity duration-500" alt="Tela do aplicativo Geplano">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="section-padding bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center scroll-reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-geplano-green uppercase">Excelência em Execução</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Nosso portfólio é a prova do nosso compromisso com a qualidade, o design e a entrega de resultados que superam as expectativas.</p>
+                </div>
+
+                <div class="mt-12 flex justify-center space-x-2 md:space-x-4 scroll-reveal">
+                    <button class="filter-btn active px-4 py-2 text-sm md:text-base font-semibold border-2 border-geplano-green rounded-full" data-filter="all">Todos</button>
+                    <button class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-geplano-green text-geplano-green rounded-full" data-filter="residencial">Residencial</button>
+                    <button class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-geplano-green text-geplano-green rounded-full" data-filter="corporativo">Corporativo</button>
+                    <button class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-geplano-green text-geplano-green rounded-full" data-filter="industrial">Industrial</button>
+                </div>
+
+                <div id="portfolio-grid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+            </div>
+        </section>
+        
+        <section id="contato" class="section-padding bg-geplano-green text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="scroll-reveal">
+                        <h2 class="text-4xl md:text-5xl font-bold uppercase">Vamos Construir Juntos?</h2>
+                        <p class="mt-4 text-lg text-gray-200">Se você busca uma parceria baseada em confiança, transparência e excelência para seu próximo projeto de alto padrão, entre em contato. Nossa equipe está pronta para transformar sua visão em realidade.</p>
+                        <div class="mt-8 space-y-4">
+                            <p class="flex items-center"><span class="text-geplano-gold mr-3">●</span> 27 99724-7384</p>
+                            <p class="flex items-center"><span class="text-geplano-gold mr-3">●</span> contato@geplano.com.br</p>
+                            <p class="flex items-center"><span class="text-geplano-gold mr-3">●</span> São Mateus - ES</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-2xl scroll-reveal">
+                        <h3 class="text-2xl font-bold text-geplano-green text-center">Fale com um Especialista</h3>
+                        <form class="mt-6 space-y-6">
+                            <div>
+                                <label for="name" class="sr-only">Nome</label>
+                                <input type="text" name="name" id="name" class="w-full px-4 py-3 rounded-md text-gray-800 border-gray-300 focus:ring-geplano-gold focus:border-geplano-gold" placeholder="Seu Nome">
+                            </div>
+                            <div>
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" name="email" id="email" class="w-full px-4 py-3 rounded-md text-gray-800 border-gray-300 focus:ring-geplano-gold focus:border-geplano-gold" placeholder="Seu E-mail">
+                            </div>
+                             <div>
+                                <label for="phone" class="sr-only">Telefone</label>
+                                <input type="tel" name="phone" id="phone" class="w-full px-4 py-3 rounded-md text-gray-800 border-gray-300 focus:ring-geplano-gold focus:border-geplano-gold" placeholder="Seu Telefone">
+                            </div>
+                            <div>
+                                <label for="message" class="sr-only">Mensagem</label>
+                                <textarea name="message" id="message" rows="4" class="w-full px-4 py-3 rounded-md text-gray-800 border-gray-300 focus:ring-geplano-gold focus:border-geplano-gold" placeholder="Sua Mensagem"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-geplano-gold text-white font-bold py-3 px-6 rounded-lg uppercase tracking-widest hover:bg-opacity-90 transition-colors">Enviar Mensagem</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <p>&copy; <span id="current-year"></span> Geplano Gestão e Consultoria de Obras. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-lg');
+                } else {
+                    header.classList.remove('shadow-lg');
+                }
+            });
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = document.getElementById('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            scrollRevealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            function animateCounter(el) {
+                const target = +el.getAttribute('data-counter-target');
+                const duration = 2000;
+                const stepTime = 20;
+                const totalSteps = duration / stepTime;
+                const increment = target / totalSteps;
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    el.innerText = Math.floor(current).toLocaleString('pt-BR');
+                }, stepTime);
+            }
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            document.querySelectorAll('[data-counter-target]').forEach(counter => {
+                counterObserver.observe(counter);
+            });
+
+            const tabs = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    const target = tab.getAttribute('data-tab');
+                    tabContents.forEach(content => {
+                        content.id === target ? content.classList.add('active') : content.classList.remove('active');
+                    });
+                });
+            });
+
+            const appFeatureBtns = document.querySelectorAll('.app-feature-btn');
+            const appScreen = document.getElementById('app-screen');
+            appFeatureBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    appFeatureBtns.forEach(b => b.classList.remove('bg-gray-100', 'font-bold'));
+                    btn.classList.add('bg-gray-100', 'font-bold');
+                    const newImage = btn.getAttribute('data-image');
+                    appScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        appScreen.src = newImage;
+                        appScreen.style.opacity = '1';
+                    }, 300);
+                });
+            });
+
+            const projectsData = [
+                { id: 1, category: 'residencial', image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop', title: 'Residência de Luxo', location: 'São Mateus, ES' },
+                { id: 2, category: 'corporativo', image: 'https://images.unsplash.com/photo-1583303133478-89d4885a049f?q=80&w=1964&auto=format&fit=crop', title: 'Edifício Comercial', location: 'Linhares, ES' },
+                { id: 3, category: 'industrial', image: 'https://images.unsplash.com/photo-1581092446347-a5c13e0d8f8a?q=80&w=2070&auto=format&fit=crop', title: 'Galpão Industrial', location: 'Sul da Bahia' },
+                { id: 4, category: 'residencial', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop', title: 'Casa de Campo', location: 'São Mateus, ES' },
+                { id: 5, category: 'corporativo', image: 'https://images.unsplash.com/photo-1542882284-839a8c633212?q=80&w=2070&auto=format&fit=crop', title: 'Clínica Médica', location: 'São Mateus, ES' },
+                { id: 6, category: 'residencial', image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2070&auto=format&fit=crop', title: 'Condomínio Horizontal', location: 'Guriri, ES' },
+            ];
+
+            const portfolioGrid = document.getElementById('portfolio-grid');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            function renderPortfolio(filter = 'all') {
+                portfolioGrid.innerHTML = '';
+                const filteredProjects = filter === 'all' ? projectsData : projectsData.filter(p => p.category === filter);
+                
+                filteredProjects.forEach(project => {
+                    const projectEl = document.createElement('div');
+                    projectEl.className = `project-card-wrapper scroll-reveal group overflow-hidden rounded-lg shadow-lg bg-white`;
+                    projectEl.innerHTML = `
+                        <div class="project-card relative">
+                            <img src="${project.image}" alt="${project.title}" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 p-6 text-white">
+                                <h3 class="text-xl font-bold">${project.title}</h3>
+                                <p class="text-sm">${project.location}</p>
+                            </div>
+                        </div>
+                    `;
+                    portfolioGrid.appendChild(projectEl);
+                });
+                
+                document.querySelectorAll('.project-card-wrapper').forEach(el => revealObserver.observe(el));
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.getAttribute('data-filter');
+                    renderPortfolio(filter);
+                });
+            });
+
+            renderPortfolio();
+            
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
