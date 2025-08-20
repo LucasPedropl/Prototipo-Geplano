@@ -26,9 +26,7 @@
         h1, h2, h3, .font-taruno {
             font-family: 'TarunoWide', sans-serif;
         }
-        .bg-geplano-green { background-color: #00613A; }
-        .text-geplano-green { color: #00613A; }
-        .border-geplano-green { border-color: #00613A; }
+        .bg-geplano-green-section { background-color: #00613A; }
         .bg-geplano-gold { background-color: #A37E2B; }
         .text-geplano-gold { color: #A37E2B; }
         .border-geplano-gold { border-color: #A37E2B; }
@@ -72,19 +70,19 @@
         header.transparent nav a { color: white; }
         header.transparent nav a:hover { color: #e5e7eb; }
         header.scrolled nav a { color: #4b5563; }
-        header.scrolled nav a:hover { color: #00613A; }
+        header.scrolled nav a:hover { color: #111827; }
         
         header nav a.active { color: #A37E2B !important; font-weight: 700; }
-        header.scrolled nav a.active { color: #00613A !important; }
+        header.scrolled nav a.active { color: #111827 !important; }
 
         header.transparent #mobile-menu-button { color: white; }
-        header.scrolled #mobile-menu-button { color: #00613A; }
+        header.scrolled #mobile-menu-button { color: #111827; }
 
         .scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
         .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
-        .filter-btn.active { background-color: #00613A; color: white; }
+        .filter-btn.active { background-color: #111827; color: white; }
         .filter-btn { transition: all 0.3s ease; }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
@@ -99,11 +97,11 @@
 
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 transparent">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between h-24">
                 <div class="flex-shrink-0">
                     <a href="#home" class="flex items-center">
-                        <img src="img/LogoBrancaGrande.png" alt="Geplano Logo" class="h-12 logo-white" onerror="this.onerror=null; this.src='https://placehold.co/200x50/FFFFFF/000000?text=GEPLANO';">
-                        <img src="img/LogoPretaGrande.png" alt="Geplano Logo" class="h-12 logo-black" onerror="this.onerror=null; this.src='https://placehold.co/200x50/000000/FFFFFF?text=GEPLANO';">
+                        <img src="img/LogoBrancaGrande.png" alt="Geplano Logo" class="h-24 logo-white" onerror="this.onerror=null; this.src='https://placehold.co/400x100/FFFFFF/000000?text=GEPLANO';">
+                        <img src="img/LogoPretaGrande.png" alt="Geplano Logo" class="h-24 logo-black" onerror="this.onerror=null; this.src='https://placehold.co/400x100/000000/FFFFFF?text=GEPLANO';">
                     </a>
                 </div>
                 <div class="hidden md:block">
@@ -125,10 +123,10 @@
         </div>
         <div id="mobile-menu" class="md:hidden hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
-                <a href="#solucao" class="text-gray-600 hover:text-geplano-green block px-3 py-2 rounded-md text-base font-medium">Nossa Solução</a>
-                <a href="#diferenciais" class="text-gray-600 hover:text-geplano-green block px-3 py-2 rounded-md text-base font-medium">Diferenciais</a>
-                <a href="#projetos" class="text-gray-600 hover:text-geplano-green block px-3 py-2 rounded-md text-base font-medium">Projetos</a>
-                <a href="#contato" class="text-gray-600 hover:text-geplano-green block px-3 py-2 rounded-md text-base font-medium">Contato</a>
+                <a href="#solucao" class="text-gray-600 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Nossa Solução</a>
+                <a href="#diferenciais" class="text-gray-600 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Diferenciais</a>
+                <a href="#projetos" class="text-gray-600 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Projetos</a>
+                <a href="#contato" class="text-gray-600 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Contato</a>
             </div>
         </div>
     </header>
@@ -148,7 +146,7 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="scroll-reveal">
-                        <h2 class="text-3xl md:text-4xl font-bold text-geplano-green uppercase">Mais que Obras, Cuidamos de Sonhos.</h2>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 uppercase">Mais que Obras, Cuidamos de Sonhos.</h2>
                         <p class="mt-4 text-lg text-gray-600">Fundada em 2014, a Geplano nasceu com a missão de transformar a construção civil. Com vasta experiência em obras industriais e, desde 2021, foco em projetos de alto padrão, desenvolvemos uma metodologia única.</p>
                         <p class="mt-4 text-gray-600">Para nós, construir é cuidar. Cuidamos minuciosamente de todo o processo, do planejamento ao pós-obra, garantindo um modelo de trabalho exclusivo que se traduz em excelência, transparência e resultados excepcionais para você.</p>
                     </div>
@@ -177,7 +175,7 @@
         <section id="solucao" class="section-padding bg-gray-50 w-full">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div class="scroll-reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-geplano-green uppercase">O Método Inteligente para Construir seu Patrimônio</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 uppercase">O Método Inteligente para Construir seu Patrimônio</h2>
                     <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Nosso modelo de Obra por Administração, ou Obra a Preço de Custo, é a forma mais transparente e eficiente de construir, eliminando custos desnecessários e bitributação, gerando uma otimização de até 30% no valor final.</p>
                 </div>
 
@@ -193,17 +191,17 @@
                         <div class="grid md:grid-cols-3 gap-8">
                             <div class="text-center p-6">
                                 <div class="text-5xl text-geplano-gold mb-4">1</div>
-                                <h3 class="text-xl font-bold text-geplano-green">Gestão Completa</h3>
+                                <h3 class="text-xl font-bold text-gray-900">Gestão Completa</h3>
                                 <p class="mt-2 text-gray-600">Assumimos toda a gestão da obra em seu nome, da concepção ao pós-obra, com responsabilidade técnica e foco total no resultado.</p>
                             </div>
                             <div class="text-center p-6">
                                 <div class="text-5xl text-geplano-gold mb-4">2</div>
-                                <h3 class="text-xl font-bold text-geplano-green">Faturamento Direto</h3>
+                                <h3 class="text-xl font-bold text-gray-900">Faturamento Direto</h3>
                                 <p class="mt-2 text-gray-600">Todos os materiais e serviços são faturados diretamente no seu nome (CPF/CNPJ), garantindo total transparência e eliminando bitributação.</p>
                             </div>
                             <div class="text-center p-6">
                                 <div class="text-5xl text-geplano-gold mb-4">3</div>
-                                <h3 class="text-xl font-bold text-geplano-green">Taxa de Administração</h3>
+                                <h3 class="text-xl font-bold text-gray-900">Taxa de Administração</h3>
                                 <p class="mt-2 text-gray-600">Nossa remuneração é uma taxa fixa e transparente sobre o custo real da obra, sem surpresas ou custos ocultos. Nosso sucesso é o seu sucesso.</p>
                             </div>
                         </div>
@@ -212,19 +210,19 @@
                     <div id="vantagens" class="tab-content mt-8">
                          <div class="grid md:grid-cols-2 gap-8 text-left">
                             <div class="p-6">
-                                <h3 class="text-xl font-bold text-geplano-green">Acompanhamento do Custo Real</h3>
+                                <h3 class="text-xl font-bold text-gray-900">Acompanhamento do Custo Real</h3>
                                 <p class="mt-2 text-gray-600">Você tem acesso a todos os custos em tempo real, com total controle sobre cada centavo investido no seu projeto.</p>
                             </div>
                             <div class="p-6">
-                                <h3 class="text-xl font-bold text-geplano-green">Flexibilidade de Alterações</h3>
+                                <h3 class="text-xl font-bold text-gray-900">Flexibilidade de Alterações</h3>
                                 <p class="mt-2 text-gray-600">Precisa mudar algo no projeto? Com nosso modelo, as alterações são simples e o custo é apenas o da modificação, sem multas ou taxas extras.</p>
                             </div>
                             <div class="p-6">
-                                <h3 class="text-xl font-bold text-geplano-green">Otimização Financeira Superior</h3>
+                                <h3 class="text-xl font-bold text-gray-900">Otimização Financeira Superior</h3>
                                 <p class="mt-2 text-gray-600">A eliminação da dupla tributação e a compra inteligente de materiais resultam em uma otimização significativa do seu investimento.</p>
                             </div>
                             <div class="p-6">
-                                <h3 class="text-xl font-bold text-geplano-green">Redução de Perdas</h3>
+                                <h3 class="text-xl font-bold text-gray-900">Redução de Perdas</h3>
                                 <p class="mt-2 text-gray-600">Nosso planejamento rigoroso e controle de estoque minimizam o desperdício de materiais, gerando mais valor para sua obra.</p>
                             </div>
                         </div>
@@ -236,13 +234,13 @@
         <section id="diferenciais" class="section-padding bg-white w-full">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center scroll-reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-geplano-green uppercase">Tecnologia e Método: Nossa Fórmula para a sua Tranquilidade</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 uppercase">Tecnologia e Método: Nossa Fórmula para a sua Tranquilidade</h2>
                     <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Unimos tecnologia de ponta a um método de gestão comprovado para oferecer uma experiência de construção sem precedentes em controle e eficiência.</p>
                 </div>
 
                 <div class="mt-16 grid md:grid-cols-2 gap-16 items-center">
                     <div class="scroll-reveal">
-                        <h3 class="text-2xl font-bold text-geplano-green">Sua Obra na Palma da Mão</h3>
+                        <h3 class="text-2xl font-bold text-gray-900">Sua Obra na Palma da Mão</h3>
                         <p class="mt-4 text-gray-600">Com nosso aplicativo exclusivo, você tem o controle total do seu projeto, onde quer que esteja. É a materialização da nossa promessa de transparência e gestão inteligente.</p>
                         <ul id="app-features" class="mt-6 space-y-4">
                             <li><button class="app-feature-btn w-full text-left p-3 rounded-lg transition-colors duration-300 bg-gray-100 font-bold" data-image="https://placehold.co/300x650/00613A/FFFFFF?text=Cronograma">Acompanhamento do Cronograma</button></li>
@@ -264,15 +262,15 @@
         <section id="projetos" class="section-padding bg-gray-50 w-full">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center scroll-reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-geplano-green uppercase">Excelência em Execução</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 uppercase">Excelência em Execução</h2>
                     <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Nosso portfólio é a prova do nosso compromisso com a qualidade, o design e a entrega de resultados que superam as expectativas.</p>
                 </div>
 
                 <div class="mt-12 flex flex-wrap justify-center gap-2 md:gap-4 scroll-reveal">
-                    <button class="filter-btn active px-4 py-2 text-sm md:text-base font-semibold border-2 border-geplano-green rounded-full" data-filter="all">Todos</button>
-                    <button class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-geplano-green text-geplano-green rounded-full" data-filter="residencial">Residencial</button>
-                    <button class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-geplano-green text-geplano-green rounded-full" data-filter="corporativo">Corporativo</button>
-                    <button class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-geplano-green text-geplano-green rounded-full" data-filter="industrial">Industrial</button>
+                    <button class="filter-btn active px-4 py-2 text-sm md:text-base font-semibold border-2 border-gray-900 rounded-full" data-filter="all">Todos</button>
+                    <button class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-gray-900 text-gray-900 rounded-full" data-filter="residencial">Residencial</button>
+                    <button class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-gray-900 text-gray-900 rounded-full" data-filter="corporativo">Corporativo</button>
+                    <button class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-gray-900 text-gray-900 rounded-full" data-filter="industrial">Industrial</button>
                 </div>
 
                 <div id="portfolio-grid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -280,7 +278,7 @@
             </div>
         </section>
         
-        <section id="contato" class="section-padding bg-geplano-green text-white w-full">
+        <section id="contato" class="section-padding bg-geplano-green-section text-white w-full">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="scroll-reveal">
@@ -293,7 +291,7 @@
                         </div>
                     </div>
                     <div class="bg-white p-8 rounded-lg shadow-2xl scroll-reveal">
-                        <h3 class="text-2xl font-bold text-geplano-green text-center">Fale com um Especialista</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 text-center">Fale com um Especialista</h3>
                         <form class="mt-6 space-y-6">
                             <div>
                                 <label for="name" class="sr-only">Nome</label>
