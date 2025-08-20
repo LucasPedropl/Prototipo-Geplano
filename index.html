@@ -30,52 +30,63 @@
         .bg-geplano-gold { background-color: #A37E2B; }
         .text-geplano-gold { color: #A37E2B; }
         .border-geplano-gold { border-color: #A37E2B; }
-        .section-padding {
-            padding: 4rem 1rem;
+        .section-padding { padding: 4rem 1rem; }
+        @media (min-width: 768px) { .section-padding { padding: 6rem 2rem; } }
+        
+        #hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
         }
-        @media (min-width: 768px) {
-            .section-padding {
-                padding: 6rem 2rem;
-            }
-        }
-        .hero-bg {
-            background-image: url('https://images.unsplash.com/photo-1581092446347-a5c13e0d8f8a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
-        }
-        .scroll-reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition: opacity 1.5s ease-in-out;
+            transform: scale(1.05);
         }
-        .scroll-reveal.visible {
+        .hero-slide.active {
             opacity: 1;
-            transform: translateY(0);
+            transform: scale(1);
+            transition: opacity 1.5s ease-in-out, transform 6s linear;
         }
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .filter-btn.active {
-            background-color: #00613A;
-            color: white;
-        }
-        .filter-btn {
-            transition: all 0.3s ease;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .tab-btn.active {
-            border-bottom: 2px solid #A37E2B;
-            color: #A37E2B;
-        }
+
+        header.transparent { background-color: transparent; box-shadow: none; }
+        header.scrolled { background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+
+        header.transparent .logo-white { display: block; }
+        header.transparent .logo-black { display: none; }
+        header.scrolled .logo-white { display: none; }
+        header.scrolled .logo-black { display: block; }
+
+        header.transparent nav a { color: white; }
+        header.transparent nav a:hover { color: #e5e7eb; }
+        header.scrolled nav a { color: #4b5563; }
+        header.scrolled nav a:hover { color: #00613A; }
+        
+        header nav a.active { color: #A37E2B !important; font-weight: 700; }
+        header.scrolled nav a.active { color: #00613A !important; }
+
+        header.transparent #mobile-menu-button { color: white; }
+        header.scrolled #mobile-menu-button { color: #00613A; }
+
+        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+        .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .filter-btn.active { background-color: #00613A; color: white; }
+        .filter-btn { transition: all 0.3s ease; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-btn.active { border-bottom: 2px solid #A37E2B; color: #A37E2B; }
     </style>
     <!-- Chosen Palette: Geplano Official (Verde Rolex #00613A, Dourado Metálico #A37E2B, Neutrals) -->
     <!-- Application Structure Plan: A single-page, narrative-driven SPA designed to guide users through Geplano's unique value proposition. The flow starts with a powerful Hero section stating the core message (intelligent construction), moves to "Nossa Solução" to educate users on the key differentiator (Obra por Administração), builds trust with "Diferenciais" (App, G10 Method), provides social proof via an interactive "Projetos" portfolio, and ends with a clear "Contato" CTA. This linear, storytelling structure is more immersive and persuasive than a traditional multi-page site, effectively communicating a complex business model to a high-end audience. -->
@@ -84,24 +95,25 @@
 </head>
 <body class="text-gray-800 antialiased">
 
-    <header id="header" class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm transition-all duration-300">
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 transparent">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
-                    <a href="#home" class="font-taruno text-2xl font-bold text-geplano-green">
-                        GEPLANO
+                    <a href="#home" class="flex items-center">
+                        <img src="img/LogoBrancaGrande.png" alt="Geplano Logo" class="h-12 logo-white" onerror="this.onerror=null; this.src='https://placehold.co/200x50/FFFFFF/000000?text=GEPLANO';">
+                        <img src="img/LogoPretaGrande.png" alt="Geplano Logo" class="h-12 logo-black" onerror="this.onerror=null; this.src='https://placehold.co/200x50/000000/FFFFFF?text=GEPLANO';">
                     </a>
                 </div>
                 <div class="hidden md:block">
                     <nav class="ml-10 flex items-baseline space-x-4">
-                        <a href="#solucao" class="text-gray-600 hover:text-geplano-green px-3 py-2 rounded-md text-sm font-medium">Nossa Solução</a>
-                        <a href="#diferenciais" class="text-gray-600 hover:text-geplano-green px-3 py-2 rounded-md text-sm font-medium">Diferenciais</a>
-                        <a href="#projetos" class="text-gray-600 hover:text-geplano-green px-3 py-2 rounded-md text-sm font-medium">Projetos</a>
+                        <a href="#solucao" class="px-3 py-2 rounded-md text-sm font-medium">Nossa Solução</a>
+                        <a href="#diferenciais" class="px-3 py-2 rounded-md text-sm font-medium">Diferenciais</a>
+                        <a href="#projetos" class="px-3 py-2 rounded-md text-sm font-medium">Projetos</a>
                         <a href="#contato" class="bg-geplano-green text-white hover:bg-opacity-90 px-4 py-2 rounded-md text-sm font-bold transition-colors">Contato</a>
                     </nav>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-geplano-green hover:bg-geplano-green hover:text-white focus:outline-none">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md focus:outline-none">
                         <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                         </svg>
@@ -110,7 +122,7 @@
             </div>
         </div>
         <div id="mobile-menu" class="md:hidden hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
                 <a href="#solucao" class="text-gray-600 hover:text-geplano-green block px-3 py-2 rounded-md text-base font-medium">Nossa Solução</a>
                 <a href="#diferenciais" class="text-gray-600 hover:text-geplano-green block px-3 py-2 rounded-md text-base font-medium">Diferenciais</a>
                 <a href="#projetos" class="text-gray-600 hover:text-geplano-green block px-3 py-2 rounded-md text-base font-medium">Projetos</a>
@@ -120,7 +132,8 @@
     </header>
 
     <main>
-        <section id="home" class="hero-bg h-screen flex items-center justify-center text-white relative">
+        <section id="home" class="h-screen flex items-center justify-center text-white relative">
+            <div id="hero-slider"></div>
             <div class="absolute inset-0 bg-black/60"></div>
             <div class="text-center z-10 p-4">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider leading-tight">A Inteligência por Trás do Alto Padrão</h1>
@@ -318,11 +331,36 @@
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
-                    header.classList.add('shadow-lg');
+                    header.classList.remove('transparent');
+                    header.classList.add('scrolled');
                 } else {
-                    header.classList.remove('shadow-lg');
+                    header.classList.add('transparent');
+                    header.classList.remove('scrolled');
                 }
             });
+
+            const heroImages = [
+                'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2070&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2070&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?q=80&w=2070&auto=format&fit=crop'
+            ];
+            const sliderContainer = document.getElementById('hero-slider');
+            heroImages.forEach((imgUrl, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'hero-slide';
+                slide.style.backgroundImage = `url('${imgUrl}')`;
+                if (index === 0) slide.classList.add('active');
+                sliderContainer.appendChild(slide);
+            });
+
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.hero-slide');
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 5000);
 
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -330,26 +368,28 @@
                 mobileMenu.classList.toggle('hidden');
             });
             
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
-
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            document.querySelectorAll('#mobile-menu a, a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const headerOffset = document.getElementById('header').offsetHeight;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        if(mobileMenu.classList.contains('hidden') === false) {
+                           mobileMenu.classList.add('hidden');
+                        }
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            let headerOffset = document.getElementById('header').offsetHeight;
+                            if (targetId === '#home') {
+                                headerOffset = 0; // No offset for home
+                            }
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: "smooth"
-                        });
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: "smooth"
+                            });
+                        }
                     }
                 });
             });
@@ -366,6 +406,35 @@
 
             scrollRevealElements.forEach(el => {
                 revealObserver.observe(el);
+            });
+
+            const sections = document.querySelectorAll('main section[id]');
+            const navLinks = document.querySelectorAll('header nav a:not([href="#contato"])');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-40% 0px -60% 0px',
+                threshold: 0
+            };
+
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                if(section.id !== 'contato' && section.id !== 'home' && section.id !== 'sobre') {
+                    sectionObserver.observe(section);
+                }
             });
 
             function animateCounter(el) {
