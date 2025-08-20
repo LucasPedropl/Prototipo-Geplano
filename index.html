@@ -17,10 +17,11 @@
             font-style: normal;
             font-display: swap;
         }
-        body {
+        html, body {
             font-family: 'Montserrat', sans-serif;
             background-color: #FDFDFD;
             overflow-x: hidden; /* Previne scroll horizontal */
+            width: 100%;
         }
         h1, h2, h3, .font-taruno {
             font-family: 'TarunoWide', sans-serif;
@@ -132,18 +133,18 @@
         </div>
     </header>
 
-    <main>
-        <section id="home" class="h-screen flex items-center justify-center text-white relative">
+    <main class="w-full">
+        <section id="home" class="h-screen flex items-center justify-center text-white relative w-full">
             <div id="hero-slider"></div>
             <div class="absolute inset-0 bg-black/60"></div>
             <div class="text-center z-10 p-4">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-normal md:tracking-wider leading-tight">A Inteligência por Trás do Alto Padrão</h1>
-                <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">Construa seu legado com transparência, controle total e a máxima eficiência de capital. Onde cada detalhe é cuidado.</p>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight md:tracking-normal leading-tight break-words">A Inteligência por Trás do Alto Padrão</h1>
+                <p class="mt-4 w-full max-w-2xl mx-auto text-lg md:text-xl text-gray-200">Construa seu legado com transparência, controle total e a máxima eficiência de capital. Onde cada detalhe é cuidado.</p>
                 <a href="#solucao" class="mt-8 inline-block bg-geplano-gold text-white font-bold py-3 px-8 rounded-lg uppercase tracking-widest hover:bg-opacity-90 transition-colors">Descubra Nossa Solução</a>
             </div>
         </section>
 
-        <section id="sobre" class="section-padding bg-white">
+        <section id="sobre" class="section-padding bg-white w-full">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="scroll-reveal">
@@ -173,7 +174,7 @@
             </div>
         </section>
 
-        <section id="solucao" class="section-padding bg-gray-50">
+        <section id="solucao" class="section-padding bg-gray-50 w-full">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div class="scroll-reveal">
                     <h2 class="text-3xl md:text-4xl font-bold text-geplano-green uppercase">O Método Inteligente para Construir seu Patrimônio</h2>
@@ -182,9 +183,9 @@
 
                 <div class="mt-12 max-w-4xl mx-auto scroll-reveal">
                     <div class="border-b border-gray-200">
-                        <nav class="-mb-px flex space-x-8 justify-center" aria-label="Tabs">
-                            <button class="tab-btn active whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg" data-tab="pilares">Os 3 Pilares</button>
-                            <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg" data-tab="vantagens">Suas Vantagens</button>
+                        <nav class="-mb-px flex flex-wrap justify-center" aria-label="Tabs">
+                            <button class="tab-btn active whitespace-nowrap py-4 px-4 border-b-2 font-medium text-lg" data-tab="pilares">Os 3 Pilares</button>
+                            <button class="tab-btn whitespace-nowrap py-4 px-4 border-b-2 font-medium text-lg" data-tab="vantagens">Suas Vantagens</button>
                         </nav>
                     </div>
 
@@ -232,7 +233,7 @@
             </div>
         </section>
 
-        <section id="diferenciais" class="section-padding bg-white">
+        <section id="diferenciais" class="section-padding bg-white w-full">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center scroll-reveal">
                     <h2 class="text-3xl md:text-4xl font-bold text-geplano-green uppercase">Tecnologia e Método: Nossa Fórmula para a sua Tranquilidade</h2>
@@ -260,14 +261,14 @@
             </div>
         </section>
 
-        <section id="projetos" class="section-padding bg-gray-50">
+        <section id="projetos" class="section-padding bg-gray-50 w-full">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center scroll-reveal">
                     <h2 class="text-3xl md:text-4xl font-bold text-geplano-green uppercase">Excelência em Execução</h2>
                     <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Nosso portfólio é a prova do nosso compromisso com a qualidade, o design e a entrega de resultados que superam as expectativas.</p>
                 </div>
 
-                <div class="mt-12 flex justify-center space-x-2 md:space-x-4 scroll-reveal">
+                <div class="mt-12 flex flex-wrap justify-center gap-2 md:gap-4 scroll-reveal">
                     <button class="filter-btn active px-4 py-2 text-sm md:text-base font-semibold border-2 border-geplano-green rounded-full" data-filter="all">Todos</button>
                     <button class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-geplano-green text-geplano-green rounded-full" data-filter="residencial">Residencial</button>
                     <button class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-geplano-green text-geplano-green rounded-full" data-filter="corporativo">Corporativo</button>
@@ -279,7 +280,7 @@
             </div>
         </section>
         
-        <section id="contato" class="section-padding bg-geplano-green text-white">
+        <section id="contato" class="section-padding bg-geplano-green text-white w-full">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="scroll-reveal">
@@ -320,7 +321,7 @@
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-white">
+    <footer class="bg-gray-800 text-white w-full">
         <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-gray-400">
             <p>&copy; <span id="current-year"></span> Geplano Gestão e Consultoria de Obras. Todos os direitos reservados.</p>
         </div>
@@ -338,7 +339,6 @@
                     header.classList.remove('transparent');
                     header.classList.add('scrolled');
                 } else {
-                    // Only make transparent if mobile menu is not open
                     if (mobileMenu.classList.contains('hidden')) {
                         header.classList.add('transparent');
                         header.classList.remove('scrolled');
@@ -348,14 +348,16 @@
             window.addEventListener('scroll', handleScroll);
 
             mobileMenuButton.addEventListener('click', () => {
+                const isMenuOpen = !mobileMenu.classList.contains('hidden');
                 mobileMenu.classList.toggle('hidden');
-                // If menu is now open and header is transparent
-                if (!mobileMenu.classList.contains('hidden') && header.classList.contains('transparent')) {
-                    header.classList.add('scrolled');
-                } 
-                // If menu is now closed and user is at the top
-                else if (mobileMenu.classList.contains('hidden') && window.scrollY <= 50) {
-                    header.classList.remove('scrolled');
+                
+                if (!isMenuOpen) { // If opening menu
+                    if(header.classList.contains('transparent')) {
+                        header.classList.remove('transparent');
+                        header.classList.add('scrolled');
+                    }
+                } else { // If closing menu
+                    handleScroll(); // Re-evaluate based on scroll position
                 }
             });
 
@@ -388,7 +390,6 @@
                         e.preventDefault();
                         if(!mobileMenu.classList.contains('hidden')) {
                            mobileMenu.classList.add('hidden');
-                           // After closing menu, re-evaluate header state
                            handleScroll();
                         }
                         const targetId = this.getAttribute('href');
@@ -514,7 +515,7 @@
 
             const projectsData = [
                 { id: 1, category: 'residencial', image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop', title: 'Residência de Luxo', location: 'São Mateus, ES' },
-                { id: 2, category: 'corporativo', image: 'https://images.unsplash.com/photo-1583303133478-89d4885a049f?q=80&w=1964&auto=format&fit=crop', title: 'Edifício Comercial', location: 'Linhares, ES' },
+                { id: 2, category: 'corporativo', image: 'https://images.unsplash.com/photo-1594484208280-efa0a7c413ba?q=80&w=1974&auto=format&fit=crop', title: 'Edifício Comercial', location: 'Linhares, ES' },
                 { id: 3, category: 'industrial', image: 'https://images.unsplash.com/photo-1581092446347-a5c13e0d8f8a?q=80&w=2070&auto=format&fit=crop', title: 'Galpão Industrial', location: 'Sul da Bahia' },
                 { id: 4, category: 'residencial', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop', title: 'Casa de Campo', location: 'São Mateus, ES' },
                 { id: 5, category: 'corporativo', image: 'https://images.unsplash.com/photo-1542882284-839a8c633212?q=80&w=2070&auto=format&fit=crop', title: 'Clínica Médica', location: 'São Mateus, ES' },
