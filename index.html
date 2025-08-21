@@ -103,37 +103,17 @@
 				display: none;
 			}
 
-			/* Mobile Logo Logic */
-			header.transparent .logo-container .logo-white.logo-small {
+			header.transparent .logo-container .logo-white {
 				display: block;
 			}
-			header.scrolled .logo-container .logo-black.logo-small {
+			header.scrolled .logo-container .logo-black {
 				display: block;
 			}
-			header.menu-open .logo-container .logo-white.logo-small {
+			header.menu-open .logo-container .logo-white {
 				display: block;
 			}
-			header.menu-open .logo-container .logo-black.logo-small {
+			header.menu-open .logo-container .logo-black {
 				display: none;
-			}
-
-			/* Desktop/Tablet Logo Logic */
-			@media (min-width: 768px) {
-				.logo-container .logo-small {
-					display: none !important;
-				}
-				header.transparent .logo-container .logo-white.logo-large {
-					display: block;
-				}
-				header.scrolled .logo-container .logo-black.logo-large {
-					display: block;
-				}
-				header.menu-open .logo-container .logo-white.logo-large {
-					display: block;
-				}
-				header.menu-open .logo-container .logo-black.logo-large {
-					display: none;
-				}
 			}
 
 			header.transparent nav a,
@@ -221,26 +201,14 @@
 							<img
 								src="img/LogoBrancaGrande.png"
 								alt="Geplano Logo"
-								class="h-24 logo logo-white logo-large"
+								class="h-16 md:h-24 logo logo-white"
 								onerror="this.onerror=null; this.src='https://placehold.co/400x100/FFFFFF/000000?text=GEPLANO';"
 							/>
 							<img
 								src="img/LogoPretaGrande.png"
 								alt="Geplano Logo"
-								class="h-24 logo logo-black logo-large"
+								class="h-16 md:h-24 logo logo-black"
 								onerror="this.onerror=null; this.src='https://placehold.co/400x100/000000/FFFFFF?text=GEPLANO';"
-							/>
-							<img
-								src="img/LogoBranca.png"
-								alt="Geplano Logo"
-								class="h-16 logo logo-white logo-small"
-								onerror="this.onerror=null; this.src='https://placehold.co/200x50/FFFFFF/000000?text=GEPLANO';"
-							/>
-							<img
-								src="img/LogoPreta.png"
-								alt="Geplano Logo"
-								class="h-16 logo logo-black logo-small"
-								onerror="this.onerror=null; this.src='https://placehold.co/200x50/000000/FFFFFF?text=GEPLANO';"
 							/>
 						</a>
 					</div>
