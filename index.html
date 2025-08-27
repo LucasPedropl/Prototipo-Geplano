@@ -97,7 +97,7 @@
 			}
 			header.menu-open {
 				background-color: #000000;
-			} /* Alterado de #111827 para preto (#000000) */
+			}
 
 			.logo-container .logo {
 				display: none;
@@ -184,10 +184,6 @@
 				color: #a37e2b;
 			}
 		</style>
-		<!-- Chosen Palette: Geplano Official (Verde Rolex #00613A, Dourado Metálico #A37E2B, Neutrals) -->
-		<!-- Application Structure Plan: A single-page, narrative-driven SPA designed to guide users through Geplano's unique value proposition. The flow starts with a powerful Hero section stating the core message (intelligent construction), moves to "Nossa Solução" to educate users on the key differentiator (Obra por Administração), builds trust with "Diferenciais" (App, G10 Method), provides social proof via an interactive "Projetos" portfolio, and ends with a clear "Contato" CTA. This linear, storytelling structure is more immersive and persuasive than a traditional multi-page site, effectively communicating a complex business model to a high-end audience. -->
-		<!-- Visualization & Content Choices: Report Info: "Obra por Administração" model -> Goal: Educate & Simplify -> Viz/Presentation: Interactive tabbed section for Pillars/Advantages -> Interaction: User clicks tabs to reveal content, preventing information overload -> Justification: Makes a complex concept digestible and engaging. | Report Info: Exclusive Management App -> Goal: Showcase Technological Advantage -> Viz/Presentation: Interactive smartphone mockup -> Interaction: User clicks feature list to change screen image in mockup -> Justification: Tangibly demonstrates the app's value. | Report Info: Project Portfolio -> Goal: Demonstrate Expertise & Quality -> Viz/Presentation: Filterable image gallery -> Interaction: User clicks category buttons (Residencial, Corporativo) to instantly filter projects -> Justification: Allows potential clients to easily find relevant examples, enhancing user experience and proving capability. All interactions are built with vanilla JS. -->
-		<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 	</head>
 	<body class="text-gray-800 antialiased">
 		<header
@@ -245,12 +241,6 @@
 								data-lang-key="nav_portal"
 								>Portal do Cliente</a
 							>
-							<button
-								id="lang-switcher"
-								class="px-3 py-2 rounded-md text-sm font-bold border-2 ml-2"
-							>
-								EN
-							</button>
 						</nav>
 					</div>
 					<div class="lg:hidden">
@@ -366,7 +356,7 @@
 					<a
 						href="https://www.obraprimaweb.com.br/portalcliente/geplanoengenharia"
 						target="_blank"
-						class="flex items-center p-3 text-base font-medium rounded-md hover:bg-gray-100 hover:text-geplano-gold border-b border-gray-200"
+						class="flex items-center p-3 text-base font-medium rounded-md hover:bg-gray-100 hover:text-geplano-gold"
 						data-lang-key="nav_portal_mobile"
 					>
 						<svg
@@ -385,26 +375,6 @@
 						</svg>
 						Portal do Cliente</a
 					>
-					<button
-						id="lang-switcher-mobile"
-						class="w-full text-left flex items-center p-3 text-base font-medium rounded-md hover:bg-gray-100 hover:text-geplano-gold"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke-width="1.5"
-							stroke="currentColor"
-							class="w-6 h-6 mr-3"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802"
-							/>
-						</svg>
-						Mudar para Inglês
-					</button>
 				</div>
 			</div>
 		</header>
@@ -419,22 +389,19 @@
 				<div class="text-center z-10 p-4">
 					<h1
 						class="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight md:tracking-normal leading-tight break-words"
-						data-lang-key="hero_title"
 					>
-						A Inteligência por Trás do Alto Padrão
+						CONSTRUIR NUNCA FOI TÃO TRANQUILO
 					</h1>
 					<p
 						class="mt-4 w-full max-w-2xl mx-auto text-lg md:text-xl text-gray-200"
-						data-lang-key="hero_subtitle"
 					>
-						Construa seu legado com transparência, controle total e
-						a máxima eficiência de capital. Onde cada detalhe é
-						cuidado.
+						Somos uma empresa especializada em gestão e consultoria
+						de obras, preparada para atender clientes exigentes que
+						valorizam qualidade, tranquilidade e economia.
 					</p>
 					<a
 						href="#solucao"
 						class="mt-8 inline-block bg-geplano-gold text-white font-bold py-3 px-8 rounded-lg uppercase tracking-widest hover:bg-opacity-90 transition-colors"
-						data-lang-key="hero_cta"
 						>Descubra Nossa Solução</a
 					>
 				</div>
@@ -446,30 +413,30 @@
 						<div class="scroll-reveal">
 							<h2
 								class="text-3xl md:text-4xl font-bold text-gray-900 uppercase"
-								data-lang-key="about_title"
 							>
-								Mais que Obras, Cuidamos de Sonhos.
+								Para nós, construir é mais do que executar: é
+								cuidar, organizar e garantir tranquilidade em
+								todas as etapas.
 							</h2>
-							<p
-								class="mt-4 text-lg text-gray-600"
-								data-lang-key="about_p1"
-							>
-								Fundada em 2014, a Geplano nasceu com a missão
-								de transformar a construção civil. Com vasta
-								experiência em obras industriais e, desde 2021,
-								foco em projetos de alto padrão, desenvolvemos
-								uma metodologia única.
+							<!-- MODIFICATION: Removed text-lg class to match other paragraphs -->
+							<p class="mt-4 text-gray-600">
+								Fundada em 2014, a Geplano se destaca por ser uma
+								empresa especializada em Gestão de Obras e
+								Contratos.
 							</p>
-							<p
-								class="mt-4 text-gray-600"
-								data-lang-key="about_p2"
-							>
-								Para nós, construir é cuidar. Cuidamos
-								minuciosamente de todo o processo, do
-								planejamento ao pós-obra, garantindo um modelo
-								de trabalho exclusivo que se traduz em
-								excelência, transparência e resultados
-								excepcionais para você.
+							<p class="mt-4 text-gray-600">
+								Iniciamos atuando no mercado de prestação de
+								serviços de construção civil na área industrial,
+								no Espírito Santo e Sul da Bahia, mas a partir de
+								2021 direcionamos nossas atenções para a
+								execução de obras em São Mateus-ES e região.
+							</p>
+							<p class="mt-4 text-gray-600">
+								Com um corpo técnico experiente e qualificado,
+								que já esteve à frente de grandes obras e
+								contratos no setor industrial, hoje podemos
+								dizer que temos uma metodologia exclusiva
+								Geplano de atuar.
 							</p>
 						</div>
 						<div
@@ -478,57 +445,39 @@
 							<div class="p-4">
 								<p
 									class="text-4xl md:text-5xl font-bold text-geplano-gold"
-									data-counter-target="10"
 								>
-									0
+									+ 30
 								</p>
-								<p
-									class="mt-2 text-gray-500"
-									data-lang-key="about_stat1"
-								>
-									Anos de Experiência
+								<p class="mt-2 text-gray-500">
+									Anos de Experiência do Corpo Técnico
 								</p>
 							</div>
 							<div class="p-4">
 								<p
 									class="text-4xl md:text-5xl font-bold text-geplano-gold"
-									data-counter-target="50"
 								>
-									0
+									+ 400
 								</p>
-								<p
-									class="mt-2 text-gray-500"
-									data-lang-key="about_stat2"
-								>
-									Projetos Gerenciados
+								<p class="mt-2 text-gray-500">
+									Projetos Executados
 								</p>
 							</div>
 							<div class="p-4">
 								<p
 									class="text-4xl md:text-5xl font-bold text-geplano-gold"
-									data-counter-target="100000"
 								>
-									0
+									+ 20.000
 								</p>
-								<p
-									class="mt-2 text-gray-500"
-									data-lang-key="about_stat3"
-								>
-									m² Construídos
-								</p>
+								<p class="mt-2 text-gray-500">M² Construídos</p>
 							</div>
 							<div class="p-4">
 								<p
 									class="text-4xl md:text-5xl font-bold text-geplano-gold"
-									data-counter-target="30"
 								>
-									0
+									+ 50
 								</p>
-								<p
-									class="mt-2 text-gray-500"
-									data-lang-key="about_stat4"
-								>
-									% de Otimização Média
+								<p class="mt-2 text-gray-500">
+									Contratos Gerenciados
 								</p>
 							</div>
 						</div>
@@ -536,116 +485,105 @@
 				</div>
 			</section>
 
+			<!-- SEÇÃO NOSSA SOLUÇÃO ATUALIZADA -->
 			<section id="solucao" class="section-padding bg-gray-50 w-full">
-				<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<div
+					class="container mx-auto px-4 sm:px-6 lg:px-8 text-center"
+				>
 					<div class="scroll-reveal">
 						<h2
 							class="text-3xl md:text-4xl font-bold text-gray-900 uppercase"
-							data-lang-key="solution_title"
 						>
-							O Método Inteligente para Construir seu Patrimônio
+							O Método mais Econômico, Transparente e Tranquilo de
+							Construir
 						</h2>
 						<p
 							class="mt-4 max-w-3xl mx-auto text-lg text-gray-600"
-							data-lang-key="solution_subtitle"
 						>
-							Nosso modelo de Obra por Administração, ou Obra a
-							Preço de Custo, é a forma mais transparente e
-							eficiente de construir, eliminando custos
-							desnecessários e bitributação, gerando uma
-							otimização de até 30% no valor final.
+							Atuamos no modelo Obra por Administração, também
+							chamado de Obra a Preço de Custo, que oferece ao
+							cliente uma experiência descomplicada da sua
+							construção, com economia e a certeza de que tudo
+							está sendo executado com excelência conforme
+							projetado.
 						</p>
 					</div>
 
-					<div class="mt-12 max-w-4xl mx-auto scroll-reveal">
+					<div class="mt-12 max-w-6xl mx-auto scroll-reveal">
 						<div class="border-b border-gray-200">
 							<nav
-								class="-mb-px flex flex-wrap justify-center"
+								class="-mb-px flex flex-wrap justify-center gap-x-4"
 								aria-label="Tabs"
 							>
 								<button
 									class="tab-btn active whitespace-nowrap py-4 px-4 border-b-2 font-medium text-lg"
 									data-tab="pilares"
-									data-lang-key="solution_tab1"
 								>
 									Os 3 Pilares
 								</button>
 								<button
 									class="tab-btn whitespace-nowrap py-4 px-4 border-b-2 font-medium text-lg"
 									data-tab="vantagens"
-									data-lang-key="solution_tab2"
 								>
 									Suas Vantagens
+								</button>
+								<button
+									class="tab-btn whitespace-nowrap py-4 px-4 border-b-2 font-medium text-lg"
+									data-tab="o-que-entregamos"
+								>
+									O que Entregamos
 								</button>
 							</nav>
 						</div>
 
 						<div id="pilares" class="tab-content active mt-8">
-							<div class="grid md:grid-cols-3 gap-8">
-								<div class="text-center p-6">
-									<div
-										class="text-5xl text-geplano-gold mb-4"
-									>
-										1
-									</div>
-									<h3
-										class="text-xl font-bold text-gray-900"
-										data-lang-key="pillar1_title"
-									>
+							<div class="grid md:grid-cols-3 gap-8 text-left">
+								<div class="p-6">
+									<h3 class="text-xl font-bold text-gray-900">
 										Gestão Completa
 									</h3>
-									<p
-										class="mt-2 text-gray-600"
-										data-lang-key="pillar1_text"
-									>
-										Assumimos toda a gestão da obra em seu
-										nome, da concepção ao pós-obra, com
-										responsabilidade técnica e foco total no
-										resultado.
+									<p class="mt-2 text-gray-600">
+										Assumimos toda a gestão da obra, do
+										pré-obra ao pós-obra, cuidando de cada
+										detalhe operacional e burocrático. Com
+										total transparência e foco no melhor
+										custo-benefício, entregamos
+										tranquilidade para o cliente e também
+										para o arquiteto, que pode confiar que
+										seu projeto será executado conforme foi
+										idealizado.
 									</p>
 								</div>
-								<div class="text-center p-6">
-									<div
-										class="text-5xl text-geplano-gold mb-4"
-									>
-										2
-									</div>
-									<h3
-										class="text-xl font-bold text-gray-900"
-										data-lang-key="pillar2_title"
-									>
+								<div class="p-6">
+									<h3 class="text-xl font-bold text-gray-900">
 										Faturamento Direto
 									</h3>
-									<p
-										class="mt-2 text-gray-600"
-										data-lang-key="pillar2_text"
-									>
-										Todos os materiais e serviços são
-										faturados diretamente no seu nome
-										(CPF/CNPJ), garantindo total
-										transparência e eliminando bitributação.
+									<p class="mt-2 text-gray-600">
+										Todas as despesas referentes à aprovação,
+										execução e regularização da obra são
+										faturados diretamente em nome do cliente.
+										Isso garante controle total e
+										visibilidade dos custos. O cliente paga
+										exatamente o preço de custo, sem
+										qualquer margem de lucro e impostos
+										embutidos pela Geplano, inexistindo nessa
+										parceria a bitributação.
 									</p>
 								</div>
-								<div class="text-center p-6">
-									<div
-										class="text-5xl text-geplano-gold mb-4"
-									>
-										3
-									</div>
-									<h3
-										class="text-xl font-bold text-gray-900"
-										data-lang-key="pillar3_title"
-									>
+								<div class="p-6">
+									<h3 class="text-xl font-bold text-gray-900">
 										Taxa de Administração
 									</h3>
-									<p
-										class="mt-2 text-gray-600"
-										data-lang-key="pillar3_text"
-									>
-										Nossa remuneração é uma taxa fixa e
-										transparente sobre o custo real da obra,
-										sem surpresas ou custos ocultos. Nosso
-										sucesso é o seu sucesso.
+									<p class="mt-2 text-gray-600">
+										A remuneração da Geplano é clara e justa,
+										sendo definida por uma taxa de
+										administração calculada sobre o custo
+										total da obra ou por um valor fixo
+										mensal. Nossa transparência é nossa
+										força: não vendemos produtos ou serviços
+										com margem de lucro ao cliente, ele paga
+										exatamente o que sua obra vale e com uma
+										gestão especializada.
 									</p>
 								</div>
 							</div>
@@ -654,91 +592,241 @@
 						<div id="vantagens" class="tab-content mt-8">
 							<div class="grid md:grid-cols-2 gap-8 text-left">
 								<div class="p-6">
-									<h3
-										class="text-xl font-bold text-gray-900"
-										data-lang-key="advantage1_title"
-									>
+									<h3 class="text-xl font-bold text-gray-900">
 										Acompanhamento do Custo Real
 									</h3>
-									<p
-										class="mt-2 text-gray-600"
-										data-lang-key="advantage1_text"
-									>
-										Você tem acesso a todos os custos em
-										tempo real, com total controle sobre
-										cada centavo investido no seu projeto.
-									</p>
-								</div>
-								<div class="p-6">
-									<h3
-										class="text-xl font-bold text-gray-900"
-										data-lang-key="advantage2_title"
-									>
-										Flexibilidade de Alterações
-									</h3>
-									<p
-										class="mt-2 text-gray-600"
-										data-lang-key="advantage2_text"
-									>
-										Precisa mudar algo no projeto? Com nosso
-										modelo, as alterações são simples e o
-										custo é apenas o da modificação, sem
-										multas ou taxas extras.
-									</p>
-								</div>
-								<div class="p-6">
-									<h3
-										class="text-xl font-bold text-gray-900"
-										data-lang-key="advantage3_title"
-									>
-										Otimização Financeira Superior
-									</h3>
-									<p
-										class="mt-2 text-gray-600"
-										data-lang-key="advantage3_text"
-									>
-										A eliminação da dupla tributação e a
-										compra inteligente de materiais resultam
-										em uma otimização significativa do seu
-										investimento.
-									</p>
-								</div>
-								<div class="p-6">
-									<h3
-										class="text-xl font-bold text-gray-900"
-										data-lang-key="advantage4_title"
-									>
-										Redução de Perdas
-									</h3>
-									<p
-										class="mt-2 text-gray-600"
-										data-lang-key="advantage4_text"
-									>
-										Nosso planejamento rigoroso e controle
-										de estoque minimizam o desperdício de
-										materiais, gerando mais valor para sua
+									<p class="mt-2 text-gray-600">
+										Como o cliente participa de todos
+										pagamentos, ele tem acesso a informações
+										detalhadas sobre tudo o que está sendo
+										utilizado e seus custos efetivos,
+										garantindo conhecimento do custo real da
 										obra.
 									</p>
+								</div>
+								<div class="p-6">
+									<h3 class="text-xl font-bold text-gray-900">
+										Economia no Custo da Obra
+									</h3>
+									<p class="mt-2 text-gray-600">
+										Como não ocorre a bitributação e a
+										inclusão de margem de lucro sobre
+										materiais, mão de obra e equipamentos, o
+										cliente paga exatamente pelo que está
+										utilizando, resultando em uma economia
+										significativa.
+									</p>
+								</div>
+								<div class="p-6">
+									<h3 class="text-xl font-bold text-gray-900">
+										Flexibilidade de Alterações
+									</h3>
+									<p class="mt-2 text-gray-600">
+										Nossa solução oferece máxima
+										flexibilidade, permitindo alterações no
+										projeto sem a necessidade de aditivos na
+										remuneração da Geplano. O custo de
+										qualquer alteração é assumido pelo
+										cliente a preço de custo.
+									</p>
+								</div>
+								<div class="p-6">
+									<h3 class="text-xl font-bold text-gray-900">
+										Redução na Perda de Materiais
+									</h3>
+									<p class="mt-2 text-gray-600">
+										Nossa gestão especializada garante o
+										controle rigoroso sobre o uso e
+										armazenamento de materiais e a redução
+										do desvio e desperdício, assegurando que
+										cada item seja utilizado de maneira
+										eficiente e econômica.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div id="o-que-entregamos" class="tab-content mt-8">
+							<div class="p-6 text-center">
+								<h3
+									class="text-2xl font-bold text-gray-900 uppercase font-taruno"
+								>
+									Método G10
+								</h3>
+								<p
+									class="mt-4 max-w-4xl mx-auto text-lg text-gray-700"
+								>
+									Entregamos uma
+									<span class="font-bold text-geplano-gold"
+										>GESTÃO INTEGRADA</span
+									>
+									única e exclusiva na região de atuação, que
+									engloba o gerenciamento de todos os
+									processos do pré-obra ao pós-obra.
+								</p>
+								<div
+									class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 text-left"
+								>
+									<!-- MODIFICATION: Changed layout for large screens -->
+									<!-- Item 1 -->
+									<div class="flex items-start space-x-4 lg:flex-col lg:items-center lg:space-x-0 lg:space-y-2 lg:text-center">
+										<div
+											class="text-4xl font-bold text-geplano-gold font-taruno"
+										>
+											01
+										</div>
+										<p
+											class="text-sm font-semibold text-gray-700 uppercase"
+										>
+											Contratação / Análise de Projetos e
+											Acompanhamento das Aprovações
+										</p>
+									</div>
+									<!-- Item 2 -->
+									<div class="flex items-start space-x-4 lg:flex-col lg:items-center lg:space-x-0 lg:space-y-2 lg:text-center">
+										<div
+											class="text-4xl font-bold text-geplano-gold font-taruno"
+										>
+											02
+										</div>
+										<p
+											class="text-sm font-semibold text-gray-700 uppercase"
+										>
+											Orçamento, Planejamento e Controle
+											Financeiro da Obra
+										</p>
+									</div>
+									<!-- Item 3 -->
+									<div class="flex items-start space-x-4 lg:flex-col lg:items-center lg:space-x-0 lg:space-y-2 lg:text-center">
+										<div
+											class="text-4xl font-bold text-geplano-gold font-taruno"
+										>
+											03
+										</div>
+										<p
+											class="text-sm font-semibold text-gray-700 uppercase"
+										>
+											Planilhas do Financiamento e
+											Gerenciamento das Medições
+										</p>
+									</div>
+									<!-- Item 4 -->
+									<div class="flex items-start space-x-4 lg:flex-col lg:items-center lg:space-x-0 lg:space-y-2 lg:text-center">
+										<div
+											class="text-4xl font-bold text-geplano-gold font-taruno"
+										>
+											04
+										</div>
+										<p
+											class="text-sm font-semibold text-gray-700 uppercase"
+										>
+											Recrutamento e Seleção da M.O e
+											Prestadores de Serviços
+										</p>
+									</div>
+									<!-- Item 5 -->
+									<div class="flex items-start space-x-4 lg:flex-col lg:items-center lg:space-x-0 lg:space-y-2 lg:text-center">
+										<div
+											class="text-4xl font-bold text-geplano-gold font-taruno"
+										>
+											05
+										</div>
+										<p
+											class="text-sm font-semibold text-gray-700 uppercase"
+										>
+											Regularização na Prefeitura, Receita
+											Federal e no Cartório de R.I.
+										</p>
+									</div>
+									<!-- Item 6 -->
+									<div class="flex items-start space-x-4 lg:flex-col lg:items-center lg:space-x-0 lg:space-y-2 lg:text-center">
+										<div
+											class="text-4xl font-bold text-geplano-gold font-taruno"
+										>
+											06
+										</div>
+										<p
+											class="text-sm font-semibold text-gray-700 uppercase"
+										>
+											Supervisão da M.O. e dos demais
+											Prestadores de Serviços
+										</p>
+									</div>
+									<!-- Item 7 -->
+									<div class="flex items-start space-x-4 lg:flex-col lg:items-center lg:space-x-0 lg:space-y-2 lg:text-center">
+										<div
+											class="text-4xl font-bold text-geplano-gold font-taruno"
+										>
+											07
+										</div>
+										<p
+											class="text-sm font-semibold text-gray-700 uppercase"
+										>
+											Suprimentos (Cotação, Negociação,
+											Compra e Locação)
+										</p>
+									</div>
+									<!-- Item 8 -->
+									<div class="flex items-start space-x-4 lg:flex-col lg:items-center lg:space-x-0 lg:space-y-2 lg:text-center">
+										<div
+											class="text-4xl font-bold text-geplano-gold font-taruno"
+										>
+											08
+										</div>
+										<p
+											class="text-sm font-semibold text-gray-700 uppercase"
+										>
+											Monitoramento da Qualidade
+											(Processos Produtivos)
+										</p>
+									</div>
+									<!-- Item 9 -->
+									<div class="flex items-start space-x-4 lg:flex-col lg:items-center lg:space-x-0 lg:space-y-2 lg:text-center">
+										<div
+											class="text-4xl font-bold text-geplano-gold font-taruno"
+										>
+											09
+										</div>
+										<p
+											class="text-sm font-semibold text-gray-700 uppercase"
+										>
+											Monitoramento da Saúde e Segurança
+											no Trabalho
+										</p>
+									</div>
+									<!-- Item 10 -->
+									<div class="flex items-start space-x-4 lg:flex-col lg:items-center lg:space-x-0 lg:space-y-2 lg:text-center">
+										<div
+											class="text-4xl font-bold text-geplano-gold font-taruno"
+										>
+											10
+										</div>
+										<p
+											class="text-sm font-semibold text-gray-700 uppercase"
+										>
+											Elaboração do Manual do
+											Proprietário
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
+			<!-- FIM DA SEÇÃO ATUALIZADA -->
 
 			<section id="diferenciais" class="section-padding bg-white w-full">
 				<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div class="text-center scroll-reveal">
 						<h2
 							class="text-3xl md:text-4xl font-bold text-gray-900 uppercase"
-							data-lang-key="features_title"
 						>
 							Tecnologia e Método: Nossa Fórmula para a sua
 							Tranquilidade
 						</h2>
 						<p
 							class="mt-4 max-w-3xl mx-auto text-lg text-gray-600"
-							data-lang-key="features_subtitle"
 						>
 							Unimos tecnologia de ponta a um método de gestão
 							comprovado para oferecer uma experiência de
@@ -748,16 +836,10 @@
 
 					<div class="mt-16 grid md:grid-cols-2 gap-16 items-center">
 						<div class="scroll-reveal">
-							<h3
-								class="text-2xl font-bold text-gray-900"
-								data-lang-key="app_title"
-							>
+							<h3 class="text-2xl font-bold text-gray-900">
 								Sua Obra na Palma da Mão
 							</h3>
-							<p
-								class="mt-4 text-gray-600"
-								data-lang-key="app_text"
-							>
+							<p class="mt-4 text-gray-600">
 								Com nosso aplicativo exclusivo, você tem o
 								controle total do seu projeto, onde quer que
 								esteja. É a materialização da nossa promessa de
@@ -768,7 +850,6 @@
 									<button
 										class="app-feature-btn w-full text-left p-3 rounded-lg transition-colors duration-300 bg-gray-100 font-bold"
 										data-image="https://placehold.co/300x650/00613A/FFFFFF?text=Cronograma"
-										data-lang-key="app_feature1"
 									>
 										Acompanhamento do Cronograma
 									</button>
@@ -777,7 +858,6 @@
 									<button
 										class="app-feature-btn w-full text-left p-3 rounded-lg transition-colors duration-300"
 										data-image="https://placehold.co/300x650/00613A/FFFFFF?text=Financeiro"
-										data-lang-key="app_feature2"
 									>
 										Relatórios Financeiros
 									</button>
@@ -786,7 +866,6 @@
 									<button
 										class="app-feature-btn w-full text-left p-3 rounded-lg transition-colors duration-300"
 										data-image="https://placehold.co/300x650/00613A/FFFFFF?text=Compras"
-										data-lang-key="app_feature3"
 									>
 										Aprovação de Compras
 									</button>
@@ -795,7 +874,6 @@
 									<button
 										class="app-feature-btn w-full text-left p-3 rounded-lg transition-colors duration-300"
 										data-image="https://placehold.co/300x650/00613A/FFFFFF?text=Fotos"
-										data-lang-key="app_feature4"
 									>
 										Diário de Obra com Fotos
 									</button>
@@ -826,13 +904,11 @@
 					<div class="text-center scroll-reveal">
 						<h2
 							class="text-3xl md:text-4xl font-bold text-gray-900 uppercase"
-							data-lang-key="projects_title"
 						>
 							Excelência em Execução
 						</h2>
 						<p
 							class="mt-4 max-w-3xl mx-auto text-lg text-gray-600"
-							data-lang-key="projects_subtitle"
 						>
 							Nosso portfólio é a prova do nosso compromisso com a
 							qualidade, o design e a entrega de resultados que
@@ -846,28 +922,24 @@
 						<button
 							class="filter-btn active px-4 py-2 text-sm md:text-base font-semibold border-2 border-gray-900 rounded-full"
 							data-filter="all"
-							data-lang-key="filter_all"
 						>
 							Todos
 						</button>
 						<button
 							class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-gray-900 text-gray-900 rounded-full"
 							data-filter="residencial"
-							data-lang-key="filter_residential"
 						>
 							Residencial
 						</button>
 						<button
 							class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-gray-900 text-gray-900 rounded-full"
 							data-filter="corporativo"
-							data-lang-key="filter_corporate"
 						>
 							Corporativo
 						</button>
 						<button
 							class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-gray-900 text-gray-900 rounded-full"
 							data-filter="industrial"
-							data-lang-key="filter_industrial"
 						>
 							Industrial
 						</button>
@@ -889,14 +961,10 @@
 						<div class="scroll-reveal">
 							<h2
 								class="text-4xl md:text-5xl font-bold uppercase"
-								data-lang-key="contact_title"
 							>
 								Vamos Construir Juntos?
 							</h2>
-							<p
-								class="mt-4 text-lg text-gray-200"
-								data-lang-key="contact_text"
-							>
+							<p class="mt-4 text-lg text-gray-200">
 								Se você busca uma parceria baseada em confiança,
 								transparência e excelência para seu próximo
 								projeto de alto padrão, entre em contato. Nossa
@@ -929,7 +997,6 @@
 						>
 							<h3
 								class="text-2xl font-bold text-gray-900 text-center"
-								data-lang-key="form_title"
 							>
 								Fale com um Especialista
 							</h3>
@@ -943,7 +1010,7 @@
 										name="name"
 										id="name"
 										class="w-full px-4 py-3 rounded-md text-gray-800 border-gray-300 focus:ring-geplano-gold focus:border-geplano-gold"
-										data-lang-placeholder="form_name"
+										placeholder="Seu Nome"
 									/>
 								</div>
 								<div>
@@ -955,7 +1022,7 @@
 										name="email"
 										id="email"
 										class="w-full px-4 py-3 rounded-md text-gray-800 border-gray-300 focus:ring-geplano-gold focus:border-geplano-gold"
-										data-lang-placeholder="form_email"
+										placeholder="Seu E-mail"
 									/>
 								</div>
 								<div>
@@ -967,7 +1034,7 @@
 										name="phone"
 										id="phone"
 										class="w-full px-4 py-3 rounded-md text-gray-800 border-gray-300 focus:ring-geplano-gold focus:border-geplano-gold"
-										data-lang-placeholder="form_phone"
+										placeholder="Seu Telefone"
 									/>
 								</div>
 								<div>
@@ -979,14 +1046,13 @@
 										id="message"
 										rows="4"
 										class="w-full px-4 py-3 rounded-md text-gray-800 border-gray-300 focus:ring-geplano-gold focus:border-geplano-gold"
-										data-lang-placeholder="form_message"
+										placeholder="Sua Mensagem"
 									></textarea>
 								</div>
 								<div>
 									<button
 										type="submit"
 										class="w-full bg-geplano-gold text-white font-bold py-3 px-6 rounded-lg uppercase tracking-widest hover:bg-opacity-90 transition-colors"
-										data-lang-key="form_submit"
 									>
 										Enviar Mensagem
 									</button>
@@ -1002,7 +1068,7 @@
 			<div
 				class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-gray-400"
 			>
-				<p data-lang-key="footer_text">
+				<p>
 					&copy; <span id="current-year"></span> Geplano Gestão e
 					Consultoria de Obras. Todos os direitos reservados.
 				</p>
@@ -1011,211 +1077,6 @@
 
 		<script>
 			document.addEventListener('DOMContentLoaded', function () {
-				const translations = {
-					pt: {
-						nav_solution: 'Nossa Solução',
-						nav_features: 'Diferenciais',
-						nav_projects: 'Projetos',
-						nav_contact: 'Contato',
-						nav_portal: 'Portal do Cliente',
-						nav_solution_mobile: 'Nossa Solução',
-						nav_features_mobile: 'Diferenciais',
-						nav_projects_mobile: 'Projetos',
-						nav_contact_mobile: 'Contato',
-						nav_portal_mobile: 'Portal do Cliente',
-						lang_switcher_mobile: 'Mudar para Inglês',
-						hero_title: 'A Inteligência por Trás do Alto Padrão',
-						hero_subtitle:
-							'Construa seu legado com transparência, controle total e a máxima eficiência de capital. Onde cada detalhe é cuidado.',
-						hero_cta: 'Descubra Nossa Solução',
-						about_title: 'Mais que Obras, Cuidamos de Sonhos.',
-						about_p1:
-							'Fundada em 2014, a Geplano nasceu com a missão de transformar a construção civil. Com vasta experiência em obras industriais e, desde 2021, foco em projetos de alto padrão, desenvolvemos uma metodologia única.',
-						about_p2:
-							'Para nós, construir é cuidar. Cuidamos minuciosamente de todo o processo, do planejamento ao pós-obra, garantindo um modelo de trabalho exclusivo que se traduz em excelência, transparência e resultados excepcionais para você.',
-						about_stat1: 'Anos de Experiência',
-						about_stat2: 'Projetos Gerenciados',
-						about_stat3: 'm² Construídos',
-						about_stat4: '% de Otimização Média',
-						solution_title:
-							'O Método Inteligente para Construir seu Patrimônio',
-						solution_subtitle:
-							'Nosso modelo de Obra por Administração, ou Obra a Preço de Custo, é a forma mais transparente e eficiente de construir, eliminando custos desnecessários e bitributação, gerando uma otimização de até 30% no valor final.',
-						solution_tab1: 'Os 3 Pilares',
-						solution_tab2: 'Suas Vantagens',
-						pillar1_title: 'Gestão Completa',
-						pillar1_text:
-							'Assumimos toda a gestão da obra em seu nome, da concepção ao pós-obra, com responsabilidade técnica e foco total no resultado.',
-						pillar2_title: 'Faturamento Direto',
-						pillar2_text:
-							'Todos os materiais e serviços são faturados diretamente no seu nome (CPF/CNPJ), garantindo total transparência e eliminando bitributação.',
-						pillar3_title: 'Taxa de Administração',
-						pillar3_text:
-							'Nossa remuneração é uma taxa fixa e transparente sobre o custo real da obra, sem surpresas ou custos ocultos. Nosso sucesso é o seu sucesso.',
-						advantage1_title: 'Acompanhamento do Custo Real',
-						advantage1_text:
-							'Você tem acesso a todos os custos em tempo real, com total controle sobre cada centavo investido no seu projeto.',
-						advantage2_title: 'Flexibilidade de Alterações',
-						advantage2_text:
-							'Precisa mudar algo no projeto? Com nosso modelo, as alterações são simples e o custo é apenas o da modificação, sem multas ou taxas extras.',
-						advantage3_title: 'Otimização Financeira Superior',
-						advantage3_text:
-							'A eliminação da dupla tributação e a compra inteligente de materiais resultam em uma otimização significativa do seu investimento.',
-						advantage4_title: 'Redução de Perdas',
-						advantage4_text:
-							'Nosso planejamento rigoroso e controle de estoque minimizam o desperdício de materiais, gerando mais valor para sua obra.',
-						features_title:
-							'Tecnologia e Método: Nossa Fórmula para a sua Tranquilidade',
-						features_subtitle:
-							'Unimos tecnologia de ponta a um método de gestão comprovado para oferecer uma experiência de construção sem precedentes em controle e eficiência.',
-						app_title: 'Sua Obra na Palma da Mão',
-						app_text:
-							'Com nosso aplicativo exclusivo, você tem o controle total do seu projeto, onde quer que esteja. É a materialização da nossa promessa de transparência e gestão inteligente.',
-						app_feature1: 'Acompanhamento do Cronograma',
-						app_feature2: 'Relatórios Financeiros',
-						app_feature3: 'Aprovação de Compras',
-						app_feature4: 'Diário de Obra com Fotos',
-						projects_title: 'Excelência em Execução',
-						projects_subtitle:
-							'Nosso portfólio é a prova do nosso compromisso com a qualidade, o design e a entrega de resultados que superam as expectativas.',
-						filter_all: 'Todos',
-						filter_residential: 'Residencial',
-						filter_corporate: 'Corporativo',
-						filter_industrial: 'Industrial',
-						contact_title: 'Vamos Construir Juntos?',
-						contact_text:
-							'Se você busca uma parceria baseada em confiança, transparência e excelência para seu próximo projeto de alto padrão, entre em contato. Nossa equipe está pronta para transformar sua visão em realidade.',
-						form_title: 'Fale com um Especialista',
-						form_name: 'Seu Nome',
-						form_email: 'Seu E-mail',
-						form_phone: 'Seu Telefone',
-						form_message: 'Sua Mensagem',
-						form_submit: 'Enviar Mensagem',
-						footer_text:
-							'© <span id="current-year"></span> Geplano Gestão e Consultoria de Obras. Todos os direitos reservados.',
-					},
-					en: {
-						nav_solution: 'Our Solution',
-						nav_features: 'Features',
-						nav_projects: 'Projects',
-						nav_contact: 'Contact',
-						nav_portal: 'Client Portal',
-						nav_solution_mobile: 'Our Solution',
-						nav_features_mobile: 'Features',
-						nav_projects_mobile: 'Projects',
-						nav_contact_mobile: 'Contact',
-						nav_portal_mobile: 'Client Portal',
-						lang_switcher_mobile: 'Switch to Portuguese',
-						hero_title: 'The Intelligence Behind High Standards',
-						hero_subtitle:
-							'Build your legacy with transparency, full control, and maximum capital efficiency. Where every detail is taken care of.',
-						hero_cta: 'Discover Our Solution',
-						about_title: 'More Than Works, We Care for Dreams.',
-						about_p1:
-							'Founded in 2014, Geplano was born with the mission to transform civil construction. With vast experience in industrial works and, since 2021, a focus on high-standard projects, we have developed a unique methodology.',
-						about_p2:
-							'For us, to build is to care. We meticulously handle the entire process, from planning to post-construction, ensuring an exclusive work model that translates into excellence, transparency, and exceptional results for you.',
-						about_stat1: 'Years of Experience',
-						about_stat2: 'Managed Projects',
-						about_stat3: 'm² Built',
-						about_stat4: 'Average Optimization %',
-						solution_title: 'The Smart Method to Build Your Wealth',
-						solution_subtitle:
-							'Our Administration-Based Work model, or Cost-Price Work, is the most transparent and efficient way to build, eliminating unnecessary costs and double taxation, generating an optimization of up to 30% in the final value.',
-						solution_tab1: 'The 3 Pillars',
-						solution_tab2: 'Your Advantages',
-						pillar1_title: 'Complete Management',
-						pillar1_text:
-							'We take over the entire management of the work in your name, from conception to post-construction, with technical responsibility and total focus on the result.',
-						pillar2_title: 'Direct Billing',
-						pillar2_text:
-							'All materials and services are billed directly to your name (CPF/CNPJ), ensuring full transparency and eliminating double taxation.',
-						pillar3_title: 'Administration Fee',
-						pillar3_text:
-							'Our remuneration is a fixed and transparent fee on the real cost of the work, with no surprises or hidden costs. Our success is your success.',
-						advantage1_title: 'Real Cost Tracking',
-						advantage1_text:
-							'You have access to all costs in real time, with full control over every penny invested in your project.',
-						advantage2_title: 'Flexibility for Changes',
-						advantage2_text:
-							'Need to change something in the project? With our model, changes are simple and the cost is only that of the modification, without fines or extra fees.',
-						advantage3_title: 'Superior Financial Optimization',
-						advantage3_text:
-							'The elimination of double taxation and smart purchasing of materials result in a significant optimization of your investment.',
-						advantage4_title: 'Waste Reduction',
-						advantage4_text:
-							'Our rigorous planning and inventory control minimize material waste, generating more value for your work.',
-						features_title:
-							'Technology and Method: Our Formula for Your Peace of Mind',
-						features_subtitle:
-							'We combine cutting-edge technology with a proven management method to offer an unprecedented construction experience in control and efficiency.',
-						app_title: 'Your Project in the Palm of Your Hand',
-						app_text:
-							'With our exclusive application, you have full control of your project, wherever you are. It is the materialization of our promise of transparency and intelligent management.',
-						app_feature1: 'Schedule Tracking',
-						app_feature2: 'Financial Reports',
-						app_feature3: 'Purchase Approval',
-						app_feature4: 'Work Diary with Photos',
-						projects_title: 'Excellence in Execution',
-						projects_subtitle:
-							'Our portfolio is proof of our commitment to quality, design, and delivering results that exceed expectations.',
-						filter_all: 'All',
-						filter_residential: 'Residential',
-						filter_corporate: 'Corporate',
-						filter_industrial: 'Industrial',
-						contact_title: 'Shall We Build Together?',
-						contact_text:
-							'If you are looking for a partnership based on trust, transparency, and excellence for your next high-standard project, get in touch. Our team is ready to turn your vision into reality.',
-						form_title: 'Speak with a Specialist',
-						form_name: 'Your Name',
-						form_email: 'Your E-mail',
-						form_phone: 'Your Phone',
-						form_message: 'Your Message',
-						form_submit: 'Send Message',
-						footer_text:
-							'© <span id="current-year"></span> Geplano Works Management and Consulting. All rights reserved.',
-					},
-				};
-
-				let currentLang = 'pt';
-
-				const langSwitcher = document.getElementById('lang-switcher');
-				const langSwitcherMobile = document.getElementById(
-					'lang-switcher-mobile'
-				);
-
-				function updateContent(lang) {
-					document
-						.querySelectorAll('[data-lang-key]')
-						.forEach((element) => {
-							const key = element.getAttribute('data-lang-key');
-							if (translations[lang][key]) {
-								element.innerHTML = translations[lang][key];
-							}
-						});
-					document
-						.querySelectorAll('[data-lang-placeholder]')
-						.forEach((element) => {
-							const key = element.getAttribute(
-								'data-lang-placeholder'
-							);
-							if (translations[lang][key]) {
-								element.placeholder = translations[lang][key];
-							}
-						});
-					langSwitcher.textContent = lang === 'pt' ? 'EN' : 'PT';
-					document.documentElement.lang =
-						lang === 'pt' ? 'pt-BR' : 'en';
-				}
-
-				function toggleLanguage() {
-					currentLang = currentLang === 'pt' ? 'en' : 'pt';
-					updateContent(currentLang);
-				}
-
-				langSwitcher.addEventListener('click', toggleLanguage);
-				langSwitcherMobile.addEventListener('click', toggleLanguage);
-
 				const header = document.getElementById('header');
 				const mobileMenuButton =
 					document.getElementById('mobile-menu-button');
@@ -1371,43 +1232,6 @@
 					}
 				});
 
-				function animateCounter(el) {
-					const target = +el.getAttribute('data-counter-target');
-					const duration = 2000;
-					const stepTime = 20;
-					const totalSteps = duration / stepTime;
-					const increment = target / totalSteps;
-					let current = 0;
-
-					const timer = setInterval(() => {
-						current += increment;
-						if (current >= target) {
-							current = target;
-							clearInterval(timer);
-						}
-						el.innerText =
-							Math.floor(current).toLocaleString('pt-BR');
-					}, stepTime);
-				}
-
-				const counterObserver = new IntersectionObserver(
-					(entries) => {
-						entries.forEach((entry) => {
-							if (entry.isIntersecting) {
-								animateCounter(entry.target);
-								counterObserver.unobserve(entry.target);
-							}
-						});
-					},
-					{ threshold: 0.5 }
-				);
-
-				document
-					.querySelectorAll('[data-counter-target]')
-					.forEach((counter) => {
-						counterObserver.observe(counter);
-					});
-
 				const tabs = document.querySelectorAll('.tab-btn');
 				const tabContents = document.querySelectorAll('.tab-content');
 				tabs.forEach((tab) => {
@@ -1530,7 +1354,6 @@
 
 				document.getElementById('current-year').textContent =
 					new Date().getFullYear();
-				updateContent(currentLang); // Initial content load
 			});
 		</script>
 	</body>
