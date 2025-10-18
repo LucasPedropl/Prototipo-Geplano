@@ -24,9 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	function populatePage(data) {
 		// Header
+		document.getElementById('nav-about').textContent =
+			data.header.nav_about;
+		document.getElementById('nav-team').textContent = data.header.nav_team;
 		document.getElementById('nav-solution').textContent =
 			data.header.nav_solution;
-		document.getElementById('nav-team').textContent = data.header.nav_team;
 		document.getElementById('nav-projects').textContent =
 			data.header.nav_projects;
 		document.getElementById('nav-contact').textContent =
@@ -43,8 +45,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			'mobile-nav-container'
 		);
 		mobileNavContainer.innerHTML = `
-            <a href="#solucao" class="mobile-nav-link">${data.header.nav_solution}</a>
+            <a href="#sobre" class="mobile-nav-link">${data.header.nav_about}</a>
             <a href="#equipe" class="mobile-nav-link">${data.header.nav_team}</a>
+            <a href="#solucao" class="mobile-nav-link">${data.header.nav_solution}</a>
             <a href="#diferenciais" class="mobile-nav-link">${data.header.nav_features}</a>
             <a href="#projetos" class="mobile-nav-link">${data.header.nav_projects}</a>
             <a href="#outras-solucoes" class="mobile-nav-link">${data.header.nav_other_solutions}</a>
@@ -147,11 +150,15 @@ document.addEventListener('DOMContentLoaded', function () {
 		const otherSolutionsGrid = document.getElementById(
 			'other-solutions-grid'
 		);
+		const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>`;
 		otherSolutionsGrid.innerHTML = data.other_solutions.items
 			.map(
 				(item) => `
-            <div class="other-solution-card bg-gray-50 p-6 rounded-lg h-full">
-                <p class="font-semibold text-geplano-green">${item}</p>
+            <div class="other-solution-card p-6 rounded-lg h-full">
+                <div class="icon-container w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                    ${checkIcon}
+                </div>
+                <p class="font-semibold text-geplano-green leading-snug">${item}</p>
             </div>
         `
 			)
@@ -465,7 +472,9 @@ document.addEventListener('DOMContentLoaded', function () {
 				(filter, index) =>
 					`<button class="filter-btn px-4 py-2 text-sm md:text-base font-semibold border-2 border-geplano-green text-geplano-green rounded-full ${
 						index === 0 ? 'active' : ''
-					}" data-filter="${filter.toLowerCase()}">${filter}</button>`
+					}" data-filter="${filter
+						.toLowerCase()
+						.replace(/ /g, '-')}">${filter}</button>`
 			)
 			.join('');
 
@@ -474,28 +483,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		function renderPortfolio(filter = 'todos') {
 			portfolioGrid.innerHTML = '';
+
 			const filteredProjects =
 				filter === 'todos'
 					? projectData.items
-					: projectData.items.filter((p) => p.category === filter);
+					: projectData.items.filter((p) =>
+							p.category.includes(filter)
+					  );
 
 			filteredProjects.forEach((project) => {
 				const projectEl = document.createElement('div');
-				projectEl.className = `project-card-wrapper scroll-reveal group overflow-hidden rounded-lg shadow-lg bg-white`;
+				projectEl.className = `scroll-reveal`;
 				projectEl.innerHTML = `
-                    <div class="project-card relative cursor-pointer">
-                        <img src="${project.image}" alt="${project.title}" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-6 text-white">
-                            <h3 class="text-xl font-bold">${project.title}</h3>
-                            <p class="text-sm">${project.location}</p>
+                    <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                        <div class="overflow-hidden">
+                           <img src="${project.image}" alt="${project.title}" class="w-full h-56 object-cover">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-geplano-green">${project.title}</h3>
+                            <p class="text-sm text-geplano-gold font-semibold mt-1">${project.location}</p>
+                            <p class="mt-4 text-gray-600 text-sm flex-grow">${project.description}</p>
                         </div>
                     </div>
                 `;
 				portfolioGrid.appendChild(projectEl);
 			});
 			// Re-observa os novos elementos
-			document.querySelectorAll('.project-card-wrapper').forEach((el) => {
+			document.querySelectorAll('.scroll-reveal').forEach((el) => {
 				const revealObserver = new IntersectionObserver(
 					(entries) => {
 						entries.forEach((entry) => {

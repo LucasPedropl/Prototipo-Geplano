@@ -1,12 +1,13 @@
 {
 	"header": {
-		"nav_solution": "Nossa Solução",
+		"nav_about": "Sobre Nós",
 		"nav_team": "Equipe",
-		"nav_projects": "Projetos",
-		"nav_contact": "Contato",
-		"nav_portal": "Portal do Cliente",
+		"nav_solution": "Nossa Solução",
 		"nav_features": "Diferenciais",
-		"nav_other_solutions": "Outras Soluções"
+		"nav_projects": "Projetos",
+		"nav_other_solutions": "Outras Soluções",
+		"nav_contact": "Contato",
+		"nav_portal": "Portal do Cliente"
 	},
 	"hero": {
 		"title": "CONSTRUIR NUNCA FOI TÃO TRANQUILO",
@@ -138,18 +139,6 @@
 			}
 		}
 	},
-	"other_solutions": {
-		"title": "Outras Soluções Geplano",
-		"items": [
-			"Estudo de Viabilidade para Construção",
-			"Documentos Técnicos para o Financiamento Imobiliário",
-			"Unificação e/ou Desdobro de Terreno",
-			"Engenharia de Custos (Orçamento e Planejamento)",
-			"Regularização de Imóveis e Obras",
-			"Consultoria de Obra por Administração",
-			"Elaboração de Projetos Complementares de Engenharia"
-		]
-	},
 	"differentiators": {
 		"title": "Tecnologia e Método: Nossa Fórmula para a sua Tranquilidade",
 		"subtitle": "Unimos tecnologia de ponta a um método de gestão comprovado para oferecer uma experiência de construção sem precedentes em controle e eficiência.",
@@ -157,20 +146,28 @@
 		"app_text": "Com nosso aplicativo exclusivo, você tem o controle total do seu projeto, onde quer que esteja. É a materialização da nossa promessa de transparência e gestão inteligente.",
 		"app_features": [
 			{
-				"name": "Acompanhamento do Cronograma",
-				"image": "https://i.imgur.com/c4p4yqC.png"
+				"name": "Acompanhar cronograma",
+				"image": "https://placehold.co/300x650/004D25/FFFFFF?text=Cronograma"
 			},
 			{
-				"name": "Relatórios Financeiros",
-				"image": "https://i.imgur.com/sFfQ06x.jpeg"
+				"name": "Acessar cotações",
+				"image": "https://placehold.co/300x650/004D25/FFFFFF?text=Cotações"
 			},
 			{
-				"name": "Aprovação de Compras",
-				"image": "https://i.imgur.com/sUrL8g3.jpeg"
+				"name": "Aprovar compras",
+				"image": "https://placehold.co/300x650/004D25/FFFFFF?text=Compras"
 			},
 			{
-				"name": "Diário de Obra com Fotos",
-				"image": "https://i.imgur.com/F0fV23y.jpeg"
+				"name": "Visualizar finanças",
+				"image": "https://placehold.co/300x650/004D25/FFFFFF?text=Financeiro"
+			},
+			{
+				"name": "Acessar diário de obra",
+				"image": "https://placehold.co/300x650/004D25/FFFFFF?text=Diário+de+Obra"
+			},
+			{
+				"name": "Acessar documentos",
+				"image": "https://placehold.co/300x650/004D25/FFFFFF?text=Documentos"
 			}
 		]
 	},
@@ -187,7 +184,7 @@
 		"items": [
 			{
 				"id": 1,
-				"category": "industrial",
+				"category": ["industrial"],
 				"image": "projetos/predio-pre-moldado.png",
 				"title": "Prédio Pré-Moldado",
 				"location": "Suzano - Mucuri/BA",
@@ -195,7 +192,7 @@
 			},
 			{
 				"id": 2,
-				"category": "industrial",
+				"category": ["industrial"],
 				"image": "projetos/caldeira de biomassa.png",
 				"title": "Caldeira de Biomassa",
 				"location": "Suzano - Mucuri/BA",
@@ -203,7 +200,7 @@
 			},
 			{
 				"id": 3,
-				"category": "industrial",
+				"category": ["industrial"],
 				"image": "projetos/alteamento de aterro.png",
 				"title": "Alteamento de Aterro",
 				"location": "Suzano - Imperatriz/MA",
@@ -211,7 +208,7 @@
 			},
 			{
 				"id": 4,
-				"category": "industrial",
+				"category": ["industrial"],
 				"image": "projetos/fechamento de alvenaria.png",
 				"title": "Fechamento de Alvenaria",
 				"location": "Suzano - Aracruz/ES",
@@ -219,7 +216,7 @@
 			},
 			{
 				"id": 5,
-				"category": "industrial",
+				"category": ["industrial"],
 				"image": "projetos/revestimento anticorrosivo.png",
 				"title": "Revestimento Anticorrosivo",
 				"location": "Suzano - Mucuri/BA",
@@ -227,7 +224,7 @@
 			},
 			{
 				"id": 6,
-				"category": "industrial",
+				"category": ["industrial"],
 				"image": "projetos/isolamento termico chamine.png",
 				"title": "Isolamento Térmico",
 				"location": "Suzano - Mucuri/BA",
@@ -235,7 +232,7 @@
 			},
 			{
 				"id": 7,
-				"category": "industrial",
+				"category": ["industrial"],
 				"image": "projetos/substituicao de trilhos.png",
 				"title": "Substituição de Trilhos",
 				"location": "Terminal Portuário de Vila Velha/ES",
@@ -243,7 +240,7 @@
 			},
 			{
 				"id": 8,
-				"category": "industrial",
+				"category": ["industrial"],
 				"image": "projetos/reforma tanque de spil.png",
 				"title": "Reforma de Tanque",
 				"location": "Suzano - Mucuri/BA",
@@ -251,7 +248,7 @@
 			},
 			{
 				"id": 9,
-				"category": "em andamento",
+				"category": ["residencial", "em-andamento"],
 				"image": "projetos/residencial golden vitor.png",
 				"title": "Residencial Unifamiliar",
 				"location": "Residencial Golden Garden - São Mateus/ES",
@@ -259,7 +256,7 @@
 			},
 			{
 				"id": 10,
-				"category": "em andamento",
+				"category": ["corporativo", "em-andamento"],
 				"image": "projetos/clinica prime.png",
 				"title": "Clínica Oftalmológica Prime",
 				"location": "Carapina - São Mateus/ES",
@@ -267,7 +264,7 @@
 			},
 			{
 				"id": 11,
-				"category": "em andamento",
+				"category": ["residencial", "em-andamento"],
 				"image": "projetos/residencial golden rodolfo.png",
 				"title": "Residencial Unifamiliar",
 				"location": "Residencial Golden Garden - São Mateus/ES",
@@ -275,12 +272,24 @@
 			},
 			{
 				"id": 12,
-				"category": "em andamento",
+				"category": ["residencial", "em-andamento"],
 				"image": "projetos/recuperacao estrutural deck.png",
 				"title": "Recuperação Estrutural",
 				"location": "Montanha/ES",
 				"description": "Engenharia Diagnóstica e Recuperação Estrutural do deck e da piscina suspensa em concreto armado."
 			}
+		]
+	},
+	"other_solutions": {
+		"title": "Outras Soluções Geplano",
+		"items": [
+			"Estudo de Viabilidade para Construção",
+			"Documentos para Financiamento Imobiliário",
+			"Unificação e/ou Desdobro de Terreno",
+			"Engenharia de Custos",
+			"Regularização de Imóveis e Obras",
+			"Consultoria de Obra por Administração",
+			"Projetos Complementares de Engenharia"
 		]
 	},
 	"contact": {

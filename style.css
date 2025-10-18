@@ -62,6 +62,8 @@ header.menu-open .logo-container .logo-black { display: none; }
 
 header.transparent nav a, header.transparent #mobile-menu-button { color: white; }
 header.scrolled nav a, header.scrolled #mobile-menu-button { color: #4b5563; }
+header.scrolled #nav-portal { color: white !important; }
+
 header.menu-open #mobile-menu-button { color: white; }
 header nav a:hover { color: #A37E2B !important; }
 
@@ -194,14 +196,22 @@ header nav a.active {
 
 /* Outras Soluções */
 .other-solution-card {
+    background-color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
 }
 .other-solution-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px -5px rgba(0,77,37,0.1);
+}
+.other-solution-card .icon-container {
+    background-color: #e6f0e9;
+    color: #004D25;
 }
 
 
